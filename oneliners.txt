@@ -1,0 +1,27 @@
+
+export _BITBUCKETTOKEN_=NTU5ODE3MTI1NDg5OvmrIIdLY6JbqqPM7zOhxNXOWXZp
+
+All Bitbucket projects
+(containing team repos)
+---
+curl --silent --insecure --request GET --url 'https://buildtools.bisnode.net/stash/rest/api/latest/projects?start=0&limit=200' --header "Authorization: Bearer $_BITBUCKETTOKEN_"  --header 'Accept: application/json' | jq '.values | .[] | .key' 
+
+
+All repo names in a project
+---
+curl --silent --insecure --request GET --url 'https://buildtools.bisnode.net/stash/rest/api/latest/projects/BDP/repos?start=0&limit=1000' --header "Authorization: Bearer $_BITBUCKETTOKEN_"  --header 'Accept: application/json' | jq '.values | .[] | .slug'
+
+
+Step to get all bitbucket repos
+---
+_next_=0; while [ "$_next_" != "null" ]; do _next_=$(export __START__=$_next_ && curl --silent --insecure --request GET --url "https://buildtools.bisnode.net/stash/rest/api/latest/repos?start=$__START__&limit=1000" --header "Authorization: Bearer $_BITBUCKETTOKEN_"  --header 'Accept: application/json' | jq '.nextPageStart'); echo $_next_; done 
+
+
+All repos (in a json page) and their project keys
+---
+curl --silent --insecure --request GET --url 'https://buildtools.bisnode.net/stash/rest/api/latest/repos?start=0&limit=1000' --header "Authorization: Bearer $_BITBUCKETTOKEN_"  --header 'Accept: application/json' | jq '.values | .[] | .name,.project.key' 
+
+
+Get info from a repo's Bisconf
+---
+curl --silent --insecure --request GET --url 'https://buildtools.bisnode.net/stash/rest/api/latest/projects/BDP/repos/odp-common-content-config/browse/bisconf.yaml?start=0&limit=1000' --header "Authorization: Bearer $_BITBUCKETTOKEN_"  --header 'Accept:application/json ' | jq '.lines | .[].text' | perl -nle 'use YAML::Tiny; s/^"|"$//g; $bisconf = $bisconf . "$_\n"; END { $yaml = YAML::Tiny->read_string( $bisconf ); $application = $yaml->[0]->{service}->{groupName}; $service = $yaml->[0]->{service}->{name}; $team = $yaml->[0]->{service}->{maintainer}->{name}; $team_email = $yaml->[0]->{service}->{maintainer}->{email}; print "\tApplication:\t$application\n\tService:\t$service\n\tTeam:\t$team\n\tContact:\t$team_email"}'
