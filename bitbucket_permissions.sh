@@ -44,6 +44,24 @@ for project in $( curl \
         }
       '
   done
+  curl \
+    --silent \
+    --insecure \
+    --request GET \
+    --url "https://buildtools.bisnode.com/stash/rest/branch-permissions/2.0/projects/${project}/restrictions" \
+    --header "Authorization: Bearer $_BITBUCKETTOKEN_"  \
+    --header 'Accept:application/json ' \
+  | perl -nle '
+      use JSON::PP;
+      $json = decode_json($_);
+      if ($json->{size} > 0) {
+        $pretty_json = JSON::PP->new->utf8->pretty->encode($json->{values});
+        $pretty_json =~ s/([^\n]+)/\t\t\t$1/smg;
+        print "\t:: PROJECT BRANCH PERMISSIONS :: {";
+        print $pretty_json;
+        print "\t}";
+      }
+    '
 
   for repo in $( curl \
                     --silent \
@@ -111,7 +129,7 @@ for project in $( curl \
         if ($json->{size} > 0) {
           $pretty_json = JSON::PP->new->utf8->pretty->encode($json->{values});
           $pretty_json =~ s/([^\n]+)/\t\t\t$1/smg;
-          print "\t\t:::BRANCH PERMISSIONS::: {";
+          print "\t\t:::REPO BRANCH PERMISSIONS::: {";
           print $pretty_json;
           print "\t\t}";
         }
