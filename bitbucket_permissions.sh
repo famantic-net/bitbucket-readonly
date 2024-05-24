@@ -9,20 +9,36 @@
 # https://docs.atlassian.com/bitbucket-server/rest/6.2.0/bitbucket-rest.html
 #
 
+OPTIND=1
+while getopts ":p:" opt ; do
+    case $opt in
+        p  ) myproject=$OPTARG;;
+        \? ) echo 'Bad argument. Should be one of [-p {project}]'
+            exit 1
+    esac
+done
+shift $(($OPTIND - 1))
+
 levels=("groups" "users")
 
-for project in $( curl \
-                    --silent \
-                    --insecure \
-                    --request GET \
-                    --url 'https://buildtools.bisnode.net/stash/rest/api/latest/projects?start=0&limit=200' \
-                    --header "Authorization: Bearer $_BITBUCKETTOKEN_"  \
-                    --header 'Accept: application/json' \
-                  | jq '.values | .[] | .key' \
-                  | perl -nle 's/^"|"$//g; print'
-                ); do
+if [ -z "$myproject" ]; then
+  projects=$( curl \
+                --silent \
+                --insecure \
+                --request GET \
+                --url 'https://buildtools.bisnode.net/stash/rest/api/latest/projects?start=0&limit=200' \
+                --header "Authorization: Bearer $_BITBUCKETTOKEN_"  \
+                --header 'Accept: application/json' \
+              | jq '.values | .[] | .key' \
+              | perl -nle 's/^"|"$//g; print'
+            )
+else
+  projects=$myproject
+fi
 
+for project in ${projects[@]}; do
   echo ":Project:" $project "{"
+
   for level in ${levels[@]}; do
     export _LEVEL_=$level && \
     curl \
