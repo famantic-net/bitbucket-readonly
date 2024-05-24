@@ -5,6 +5,13 @@ use warnings;
 use JSON::PP;
 use autodie;
 
+use Getopt::Std;
+my %opts;
+getopts("cp", \%opts);
+
+use lib '.';
+use PostBranchRestriction;
+
 binmode(STDOUT, ":encoding(UTF-8)");
 
 my $permgroups;
@@ -15,6 +22,8 @@ my $permgroups;
     close $fh;
 }
 
+my $commit = 1 if $opts{c};
+my $display_permissions = 1 if $opts{p};
 my @levels = qw(groups users);
 my %projects;
 my %project_permissions;
@@ -97,17 +106,22 @@ while ($permgroups =~ m/(:Project:\s.+?^})/smg) {
 # Print the results
 for my $proj (sort keys %projects) {
     print "$proj ->\n";
-    print_permissions($project_permissions{$proj}, "\t== Project permissions ==\n");
-    print_permissions($branch_permissions_per_project{$proj}, "\t== Project branch permissions ==\n");
+    if ($display_permissions) {
+        print_permissions($project_permissions{$proj}, "\t== Project permissions ==\n");
+        print_permissions($branch_permissions_per_project{$proj}, "\t== Project branch permissions (current) ==\n");
+    }
+    PostBranchRestriction->curlpost($proj, $branch_permissions_per_project{$proj}, $commit);
 
     my $printed;
     for my $repo (sort keys %{$repo_per_project{$proj}}) {
         print "\t= Repo =\n" if not $printed;
         $printed = 1;
         print "\t$repo\n";
-        print_permissions($repo_per_project_permissions{$proj}{$repo}, "\t\t== Repo permissions ==\n");
-        print_permissions($branch_permissions_per_repo_per_project{$proj}{$repo}, "\t\t== Branch permissions ==\n");
-        print_branches($branches_per_repo_per_project{$proj}{$repo});
+        if ($display_permissions) {
+            print_permissions($repo_per_project_permissions{$proj}{$repo}, "\t\t== Repo permissions ==\n");
+            print_permissions($branch_permissions_per_repo_per_project{$proj}{$repo}, "\t\t== Branch permissions ==\n");
+            print_branches($branches_per_repo_per_project{$proj}{$repo});
+        }
     }
 }
 
@@ -138,6 +152,8 @@ sub parse_branch_permission {
         matcher_displayId   => $permission->{matcher}{displayId},
         matcher_type_id     => $permission->{matcher}{type}{id},
         matcher_type_name   => $permission->{matcher}{type}{name},
+        users               => $permission->{users},
+        groups              => $permission->{groups},
     );
 }
 
@@ -148,7 +164,25 @@ sub print_permissions {
         print $header if not $printed;
         for my $key (sort keys %$perm_settings) {
             my $perm_data = $perm_settings->{$key};
-            print "\t\t$key: $perm_data" if $perm_data;
+            unless (grep(/$key/, qw(users groups))) {
+                print "\t\t$key: $perm_data" if $perm_data;
+            }
+        }
+        for my $key (sort keys %$perm_settings) {
+            my $perm_data = $perm_settings->{$key};
+            if (grep(/$key/, qw(users groups))) {
+                for my $cred (@{$perm_data}) {
+                    print "\n";
+                    if ($key eq "users") {
+                        for my $cred_key (sort keys %{$cred}) {
+                            print "\t\t\t$key:$cred_key: $cred->{$cred_key}";
+                        }
+                    }
+                    else {
+                        print "\t\t\t$key: $cred";
+                    }
+                }
+            }
         }
         print "\n";
         $printed = 1;
