@@ -1,10 +1,17 @@
 
 Based off scripts in jobs/APM directory
 
-all permissions token for uid: foreman
+All repo permissions token for uid: foreman
+
  export _BITBUCKETTOKEN_=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (see Keepassxc db)
 
-==========
+Actual uid login with full SYSADMIN permissions necessary to manage 'all-users' list for
+whitelist _ALL_' keyword.
+
+ export _BITBUCKETPWD_=<pwd>
+ export _BITBUCKETUSER_=foreman
+
+  ==========
  Strategy
 ==========
 
