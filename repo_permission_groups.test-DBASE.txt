@@ -1,0 +1,2913 @@
+:Project: DBASE {
+	:: PROJECT PERMISSIONS (groups) :: {[
+	   {
+	      "permission" : "PROJECT_READ",
+	      "group" : {
+	         "name" : "cm (fisheye, bamboo etc)"
+	      }
+	   },
+	   {
+	      "group" : {
+	         "name" : "developers"
+	      },
+	      "permission" : "PROJECT_WRITE"
+	   },
+	   {
+	      "permission" : "PROJECT_ADMIN",
+	      "group" : {
+	         "name" : "devops"
+	      }
+	   }
+	]}
+
+	:: PROJECT PERMISSIONS (users) :: {[
+	   {
+	      "permission" : "PROJECT_WRITE",
+	      "user" : {
+	         "links" : {
+	            "self" : [
+	               {
+	                  "href" : "https://buildtools.bisnode.com/stash/users/bamboo"
+	               }
+	            ]
+	         },
+	         "id" : 3133,
+	         "slug" : "bamboo",
+	         "type" : "NORMAL",
+	         "emailAddress" : "bamboo@bisnode.com",
+	         "displayName" : "bamboo",
+	         "name" : "bamboo",
+	         "active" : true
+	      }
+	   },
+	   {
+	      "user" : {
+	         "type" : "NORMAL",
+	         "slug" : "danols",
+	         "id" : 8058,
+	         "links" : {
+	            "self" : [
+	               {
+	                  "href" : "https://buildtools.bisnode.com/stash/users/danols"
+	               }
+	            ]
+	         },
+	         "emailAddress" : "OlssonD@DNB.com",
+	         "displayName" : "Daniel Olsson",
+	         "active" : true,
+	         "name" : "danols"
+	      },
+	      "permission" : "PROJECT_ADMIN"
+	   },
+	   {
+	      "user" : {
+	         "emailAddress" : "LundinJ@DNB.com",
+	         "id" : 3346,
+	         "type" : "NORMAL",
+	         "slug" : "joalun",
+	         "links" : {
+	            "self" : [
+	               {
+	                  "href" : "https://buildtools.bisnode.com/stash/users/joalun"
+	               }
+	            ]
+	         },
+	         "active" : true,
+	         "name" : "joalun",
+	         "displayName" : "Joakim Lundin"
+	      },
+	      "permission" : "PROJECT_ADMIN"
+	   },
+	   {
+	      "user" : {
+	         "name" : "lukkad",
+	         "active" : true,
+	         "displayName" : "Łukasz Kądalski",
+	         "emailAddress" : "KadalskiL@DNB.com",
+	         "links" : {
+	            "self" : [
+	               {
+	                  "href" : "https://buildtools.bisnode.com/stash/users/lukkad"
+	               }
+	            ]
+	         },
+	         "id" : 5958,
+	         "type" : "NORMAL",
+	         "slug" : "lukkad"
+	      },
+	      "permission" : "PROJECT_ADMIN"
+	   },
+	   {
+	      "user" : {
+	         "displayName" : "Joakim Sundqvist",
+	         "active" : true,
+	         "name" : "sundqvistj",
+	         "id" : 11741,
+	         "type" : "NORMAL",
+	         "slug" : "sundqvistj",
+	         "links" : {
+	            "self" : [
+	               {
+	                  "href" : "https://buildtools.bisnode.com/stash/users/sundqvistj"
+	               }
+	            ]
+	         },
+	         "emailAddress" : "Joakim.Sundqvist@bisnode.com"
+	      },
+	      "permission" : "PROJECT_ADMIN"
+	   }
+	]}
+
+	:: PROJECT BRANCH PERMISSIONS :: {
+			[
+			   {
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "active" : true,
+			         "id" : "master",
+			         "displayId" : "master"
+			      },
+			      "id" : 399,
+			      "groups" : [],
+			      "users" : [],
+			      "accessKeys" : [],
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "type" : "pull-request-only"
+			   }
+			]
+
+	}
+	::Repo:: asp-dotnet3-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : true,
+			      "latestCommit" : "ffda87d2986bbecdda38372f59f7b0906a1473c2",
+			      "latestChangeset" : "ffda87d2986bbecdda38372f59f7b0906a1473c2",
+			      "displayId" : "master",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/master"
+			   },
+			   {
+			      "latestCommit" : "9511826e708788da21273fd3ab94234a095f0187",
+			      "isDefault" : false,
+			      "id" : "refs/heads/auto-update-3.1.13",
+			      "displayId" : "auto-update-3.1.13",
+			      "latestChangeset" : "9511826e708788da21273fd3ab94234a095f0187",
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "type" : "pull-request-only",
+			      "id" : 399,
+			      "groups" : [],
+			      "users" : [],
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "matcher" : {
+			         "active" : true,
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         },
+			         "id" : "master",
+			         "displayId" : "master"
+			      },
+			      "accessKeys" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: dbase-common {
+		::: REPO PERMISSIONS (groups) ::: {[
+		   {
+		      "permission" : "REPO_READ",
+		      "group" : {
+		         "name" : "cm (fisheye, bamboo etc)"
+		      }
+		   },
+		   {
+		      "group" : {
+		         "name" : "developers"
+		      },
+		      "permission" : "REPO_ADMIN"
+		   }
+		]}
+
+		:::BRANCHES::: {
+			[
+			   {
+			      "id" : "refs/heads/master",
+			      "latestChangeset" : "5d6329ff8fe0924ed5d8a54591b383f023478cba",
+			      "latestCommit" : "5d6329ff8fe0924ed5d8a54591b383f023478cba",
+			      "type" : "BRANCH",
+			      "displayId" : "master",
+			      "isDefault" : true
+			   },
+			   {
+			      "isDefault" : false,
+			      "displayId" : "move_slack_integration",
+			      "type" : "BRANCH",
+			      "latestCommit" : "406b304fbb8b8ae9a0b9e239bd0aee545c3325d4",
+			      "latestChangeset" : "406b304fbb8b8ae9a0b9e239bd0aee545c3325d4",
+			      "id" : "refs/heads/move_slack_integration"
+			   },
+			   {
+			      "id" : "refs/heads/semantic_version",
+			      "latestChangeset" : "060c1ff56bf425a6dbf52c970af003b5637cafd0",
+			      "latestCommit" : "060c1ff56bf425a6dbf52c970af003b5637cafd0",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "displayId" : "semantic_version"
+			   },
+			   {
+			      "displayId" : "updateDepImg",
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/updateDepImg",
+			      "latestCommit" : "03e0fa1640e2705f4b8a1f30bd5f9ac132b6176c",
+			      "latestChangeset" : "03e0fa1640e2705f4b8a1f30bd5f9ac132b6176c"
+			   },
+			   {
+			      "id" : "refs/heads/docs",
+			      "latestChangeset" : "9d82ff5b6e5574bb2f537490c6d9dca864bf4f19",
+			      "latestCommit" : "9d82ff5b6e5574bb2f537490c6d9dca864bf4f19",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "displayId" : "docs"
+			   },
+			   {
+			      "id" : "refs/heads/scriptfix",
+			      "latestCommit" : "4fdb92a1ddcc0f2a228f27a41afe204b2268b943",
+			      "latestChangeset" : "4fdb92a1ddcc0f2a228f27a41afe204b2268b943",
+			      "displayId" : "scriptfix",
+			      "isDefault" : false,
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "type" : "pull-request-only",
+			      "users" : [],
+			      "matcher" : {
+			         "id" : "master",
+			         "displayId" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         },
+			         "active" : true
+			      },
+			      "id" : 399,
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "groups" : [],
+			      "accessKeys" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: dbase-common-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : false,
+			      "displayId" : "debug_m1",
+			      "type" : "BRANCH",
+			      "latestCommit" : "fa397d958e17c8806c6c06a7fa954b3d24f40627",
+			      "latestChangeset" : "fa397d958e17c8806c6c06a7fa954b3d24f40627",
+			      "id" : "refs/heads/debug_m1"
+			   },
+			   {
+			      "displayId" : "TR-2906-appdynamics-auto-instrumentation",
+			      "isDefault" : false,
+			      "id" : "refs/heads/TR-2906-appdynamics-auto-instrumentation",
+			      "latestChangeset" : "70c23a11226667259e8dd9598be1de26a5a9901b",
+			      "type" : "BRANCH",
+			      "latestCommit" : "70c23a11226667259e8dd9598be1de26a5a9901b"
+			   },
+			   {
+			      "id" : "refs/heads/TR-2906-appd-auto-instrumentation",
+			      "latestCommit" : "06dacbfba8c05195403da4047f5883873af8969c",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "06dacbfba8c05195403da4047f5883873af8969c",
+			      "displayId" : "TR-2906-appd-auto-instrumentation",
+			      "isDefault" : false
+			   },
+			   {
+			      "id" : "refs/heads/TR-2811_dbase-common_build_opts",
+			      "type" : "BRANCH",
+			      "latestCommit" : "8ac9fae0af66568d6ccc0415a324ad92bcb57eab",
+			      "latestChangeset" : "8ac9fae0af66568d6ccc0415a324ad92bcb57eab",
+			      "displayId" : "TR-2811_dbase-common_build_opts",
+			      "isDefault" : false
+			   },
+			   {
+			      "id" : "refs/heads/master",
+			      "latestCommit" : "aa50ac5d0439a725511c0f564b6ada056e36089e",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "aa50ac5d0439a725511c0f564b6ada056e36089e",
+			      "displayId" : "master",
+			      "isDefault" : true
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "matcher" : {
+			         "active" : true,
+			         "displayId" : "master",
+			         "id" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         }
+			      },
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "accessKeys" : [],
+			      "users" : [],
+			      "groups" : [],
+			      "id" : 399,
+			      "type" : "pull-request-only"
+			   }
+			]
+
+		}
+	}
+	::Repo:: dotnet-runtime3-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "id" : "refs/heads/master",
+			      "latestCommit" : "dba8145cb868b51cd39b86541090361586a9a688",
+			      "latestChangeset" : "dba8145cb868b51cd39b86541090361586a9a688",
+			      "displayId" : "master",
+			      "type" : "BRANCH",
+			      "isDefault" : true
+			   },
+			   {
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "displayId" : "auto-update-20.11.13",
+			      "latestChangeset" : "bcfa439a913775361215cacb3343e1d2e2644d7c",
+			      "latestCommit" : "bcfa439a913775361215cacb3343e1d2e2644d7c",
+			      "id" : "refs/heads/auto-update-20.11.13"
+			   },
+			   {
+			      "latestChangeset" : "a7178069765f0f5eaccfc3c26f08ccbfd43a6d1b",
+			      "latestCommit" : "a7178069765f0f5eaccfc3c26f08ccbfd43a6d1b",
+			      "id" : "refs/heads/auto-update-20.11.11",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "displayId" : "auto-update-20.11.11"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "type" : "pull-request-only",
+			      "id" : 399,
+			      "users" : [],
+			      "matcher" : {
+			         "displayId" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         },
+			         "active" : true,
+			         "id" : "master"
+			      },
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "accessKeys" : [],
+			      "groups" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: dotnet-runtime6-otel {
+		:::BRANCHES::: {
+			[
+			   {
+			      "displayId" : "install_otel",
+			      "latestChangeset" : "3aa9edd0d9c1668ae40494e1521dd0d85ca6856a",
+			      "id" : "refs/heads/install_otel",
+			      "type" : "BRANCH",
+			      "latestCommit" : "3aa9edd0d9c1668ae40494e1521dd0d85ca6856a",
+			      "isDefault" : false
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "displayId" : "master",
+			      "latestChangeset" : "686c4a3e76d66193b93568833a0d6afa511548c0",
+			      "id" : "refs/heads/master",
+			      "isDefault" : true,
+			      "latestCommit" : "686c4a3e76d66193b93568833a0d6afa511548c0"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "id" : 399,
+			      "type" : "pull-request-only",
+			      "accessKeys" : [],
+			      "groups" : [],
+			      "matcher" : {
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         },
+			         "displayId" : "master",
+			         "id" : "master",
+			         "active" : true
+			      },
+			      "users" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: nginx {
+		:::BRANCHES::: {
+			[
+			   {
+			      "latestChangeset" : "17fe2b93326e51620e883cbc9bbc45a44ee58fff",
+			      "latestCommit" : "17fe2b93326e51620e883cbc9bbc45a44ee58fff",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/TR-1776-use-ECR",
+			      "displayId" : "TR-1776-use-ECR",
+			      "isDefault" : false
+			   },
+			   {
+			      "displayId" : "master",
+			      "isDefault" : true,
+			      "id" : "refs/heads/master",
+			      "type" : "BRANCH",
+			      "latestCommit" : "63a53ca99ba3ad85d91641d4381c00945248f5ab",
+			      "latestChangeset" : "63a53ca99ba3ad85d91641d4381c00945248f5ab"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "type" : "pull-request-only",
+			      "users" : [],
+			      "groups" : [],
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "id" : 399,
+			      "accessKeys" : [],
+			      "matcher" : {
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         },
+			         "id" : "master",
+			         "displayId" : "master",
+			         "active" : true
+			      }
+			   }
+			]
+
+		}
+	}
+	::Repo:: nginx-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : false,
+			      "id" : "refs/heads/auto-update-22.04.33",
+			      "displayId" : "auto-update-22.04.33",
+			      "latestCommit" : "6d4004473406edb1285b515a77e594cf4efa53ee",
+			      "latestChangeset" : "6d4004473406edb1285b515a77e594cf4efa53ee",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "isDefault" : true,
+			      "id" : "refs/heads/master",
+			      "displayId" : "master",
+			      "latestCommit" : "fad6a152074ca7a775c86b738a6a8c389a62ffa5",
+			      "latestChangeset" : "fad6a152074ca7a775c86b738a6a8c389a62ffa5",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "id" : "refs/heads/auto-update-18.04.30",
+			      "isDefault" : false,
+			      "displayId" : "auto-update-18.04.30",
+			      "latestCommit" : "901b9eee0dd4c001baea3617f0282acf174b8ba7",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "901b9eee0dd4c001baea3617f0282acf174b8ba7"
+			   },
+			   {
+			      "latestChangeset" : "816233315c329295bb5610ca29c1519849687ca8",
+			      "type" : "BRANCH",
+			      "latestCommit" : "816233315c329295bb5610ca29c1519849687ca8",
+			      "id" : "refs/heads/testing",
+			      "isDefault" : false,
+			      "displayId" : "testing"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "groups" : [],
+			      "matcher" : {
+			         "active" : true,
+			         "displayId" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         },
+			         "id" : "master"
+			      },
+			      "id" : 399,
+			      "users" : [],
+			      "accessKeys" : [],
+			      "type" : "pull-request-only",
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      }
+			   }
+			]
+
+		}
+	}
+	::Repo:: openjdk-11 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "latestCommit" : "7fc5f01cc50f3f6dd877c4d00a83e043423024c3",
+			      "latestChangeset" : "7fc5f01cc50f3f6dd877c4d00a83e043423024c3",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "isDefault" : false,
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle"
+			   },
+			   {
+			      "displayId" : "master",
+			      "isDefault" : true,
+			      "id" : "refs/heads/master",
+			      "latestChangeset" : "f5e31769e319e216d709457f70beda1b8de6348c",
+			      "type" : "BRANCH",
+			      "latestCommit" : "f5e31769e319e216d709457f70beda1b8de6348c"
+			   },
+			   {
+			      "latestChangeset" : "a0ac50bbb52fe0e073ac8f3e36ef74f87a2bc2db",
+			      "id" : "refs/heads/opendk-11.0.4",
+			      "type" : "BRANCH",
+			      "latestCommit" : "a0ac50bbb52fe0e073ac8f3e36ef74f87a2bc2db",
+			      "displayId" : "opendk-11.0.4",
+			      "isDefault" : false
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "latestChangeset" : "6a842e8bff77ed8f5b13941f3cc52a9f7f6655de",
+			      "id" : "refs/heads/updateDockerFrom",
+			      "latestCommit" : "6a842e8bff77ed8f5b13941f3cc52a9f7f6655de",
+			      "isDefault" : false,
+			      "displayId" : "updateDockerFrom"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "groups" : [],
+			      "id" : 399,
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "matcher" : {
+			         "active" : true,
+			         "id" : "master",
+			         "displayId" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         }
+			      },
+			      "users" : [],
+			      "type" : "pull-request-only",
+			      "accessKeys" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: openjdk-11-splunk {
+		:::BRANCHES::: {
+			[
+			   {
+			      "latestChangeset" : "81bb642964c140299341072b8b9cca6e8525ac07",
+			      "isDefault" : false,
+			      "id" : "refs/heads/auto-update-1.23.12",
+			      "latestCommit" : "81bb642964c140299341072b8b9cca6e8525ac07",
+			      "displayId" : "auto-update-1.23.12",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "latestChangeset" : "a77798f2766745cbc82fc9b3acc5c419ebcccdf0",
+			      "isDefault" : true,
+			      "id" : "refs/heads/master",
+			      "latestCommit" : "a77798f2766745cbc82fc9b3acc5c419ebcccdf0",
+			      "displayId" : "master",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "latestChangeset" : "c7cba290270e17ffd420f5fe1af633a654eaccf2",
+			      "isDefault" : false,
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "latestCommit" : "c7cba290270e17ffd420f5fe1af633a654eaccf2",
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "displayId" : "auto-update-1.23.3",
+			      "id" : "refs/heads/auto-update-1.23.3",
+			      "latestCommit" : "066e3e4bdd4132224a0b336ef9dfe5d7c93c0c27",
+			      "isDefault" : false,
+			      "latestChangeset" : "066e3e4bdd4132224a0b336ef9dfe5d7c93c0c27"
+			   },
+			   {
+			      "latestChangeset" : "b388a9bef76f9df9336daa37e46414ebdb342268",
+			      "type" : "BRANCH",
+			      "displayId" : "auto-update-1.22.2",
+			      "latestCommit" : "b388a9bef76f9df9336daa37e46414ebdb342268",
+			      "id" : "refs/heads/auto-update-1.22.2",
+			      "isDefault" : false
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "accessKeys" : [],
+			      "users" : [],
+			      "groups" : [],
+			      "matcher" : {
+			         "active" : true,
+			         "displayId" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         },
+			         "id" : "master"
+			      },
+			      "id" : 399,
+			      "type" : "pull-request-only",
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      }
+			   }
+			]
+
+		}
+	}
+	::Repo:: openjdk-11-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "type" : "BRANCH",
+			      "latestChangeset" : "62e8f1afc1eafe4b106e8d574753e31a5e0791af",
+			      "id" : "refs/heads/master",
+			      "isDefault" : true,
+			      "displayId" : "master",
+			      "latestCommit" : "62e8f1afc1eafe4b106e8d574753e31a5e0791af"
+			   },
+			   {
+			      "isDefault" : false,
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "latestCommit" : "2e2436cd9ec4f1317d6b36089d4a86d10b131ea5",
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "2e2436cd9ec4f1317d6b36089d4a86d10b131ea5"
+			   },
+			   {
+			      "displayId" : "auto-update-22.3.29",
+			      "latestCommit" : "accbe019932b0137c0caddc5c3e0066a82eebbe9",
+			      "id" : "refs/heads/auto-update-22.3.29",
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "latestChangeset" : "accbe019932b0137c0caddc5c3e0066a82eebbe9"
+			   },
+			   {
+			      "displayId" : "auto-update-22.3.28",
+			      "latestCommit" : "55dffdf82c6444bfbaacecdf7c366ecfdebaf156",
+			      "id" : "refs/heads/auto-update-22.3.28",
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "latestChangeset" : "55dffdf82c6444bfbaacecdf7c366ecfdebaf156"
+			   },
+			   {
+			      "isDefault" : false,
+			      "id" : "refs/heads/Test_new_base_image",
+			      "latestCommit" : "a4bda3ebca8bd439db932c8f38c71341b5279d04",
+			      "displayId" : "Test_new_base_image",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "a4bda3ebca8bd439db932c8f38c71341b5279d04"
+			   },
+			   {
+			      "isDefault" : false,
+			      "id" : "refs/heads/auto-update-21.1.24",
+			      "latestCommit" : "e89de4bb75ebec76c90f4e526968250353574ecd",
+			      "displayId" : "auto-update-21.1.24",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "e89de4bb75ebec76c90f4e526968250353574ecd"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "latestChangeset" : "ea19471b9a1e3bb8612eacb9741818b0d8c3bec6",
+			      "displayId" : "auto-update-20.7.22",
+			      "latestCommit" : "ea19471b9a1e3bb8612eacb9741818b0d8c3bec6",
+			      "id" : "refs/heads/auto-update-20.7.22",
+			      "isDefault" : false
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "accessKeys" : [],
+			      "id" : 399,
+			      "groups" : [],
+			      "matcher" : {
+			         "active" : true,
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "id" : "master",
+			         "displayId" : "master"
+			      },
+			      "users" : [],
+			      "type" : "pull-request-only",
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      }
+			   }
+			]
+
+		}
+	}
+	::Repo:: openjdk-17-splunk {
+		:::BRANCHES::: {
+			[
+			   {
+			      "id" : "refs/heads/auto-update-1.23.12",
+			      "latestCommit" : "327ecf2f8d8c38387ae7269de86a89ed5f48e47b",
+			      "isDefault" : false,
+			      "displayId" : "auto-update-1.23.12",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "327ecf2f8d8c38387ae7269de86a89ed5f48e47b"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "latestCommit" : "55a861cbdde563eb7c90606357342fa3777fc9d8",
+			      "isDefault" : true,
+			      "displayId" : "master",
+			      "latestChangeset" : "55a861cbdde563eb7c90606357342fa3777fc9d8",
+			      "id" : "refs/heads/master"
+			   },
+			   {
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "latestCommit" : "317f5b197d935895d56f149e84c11dd2b565b98f",
+			      "isDefault" : false,
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "317f5b197d935895d56f149e84c11dd2b565b98f"
+			   },
+			   {
+			      "latestChangeset" : "2fa5eef8b9cd432b9160e95c94d207698442938c",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "latestCommit" : "2fa5eef8b9cd432b9160e95c94d207698442938c",
+			      "displayId" : "auto-update-1.23.3",
+			      "id" : "refs/heads/auto-update-1.23.3"
+			   },
+			   {
+			      "latestChangeset" : "18f8bcd16360a28d957e07ca29544c35f7e8dd3c",
+			      "displayId" : "auto-update-1.22.2",
+			      "isDefault" : false,
+			      "latestCommit" : "18f8bcd16360a28d957e07ca29544c35f7e8dd3c",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/auto-update-1.22.2"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "displayId" : "auto-update-1.22.9",
+			      "isDefault" : false,
+			      "latestCommit" : "2b6e138bc44a84e4e8866519d563ec1dc797c3f1",
+			      "latestChangeset" : "2b6e138bc44a84e4e8866519d563ec1dc797c3f1",
+			      "id" : "refs/heads/auto-update-1.22.9"
+			   },
+			   {
+			      "id" : "refs/heads/auto-update-1.22.1",
+			      "latestChangeset" : "0c588189bda07d9ab51aedd856f4c87e086db4d4",
+			      "isDefault" : false,
+			      "displayId" : "auto-update-1.22.1",
+			      "latestCommit" : "0c588189bda07d9ab51aedd856f4c87e086db4d4",
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "id" : "master",
+			         "displayId" : "master",
+			         "active" : true
+			      },
+			      "groups" : [],
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "users" : [],
+			      "type" : "pull-request-only",
+			      "id" : 399,
+			      "accessKeys" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: openjdk-17-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "id" : "refs/heads/master",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "78e9de23e1241148580b1b01ec306f09580f0806",
+			      "isDefault" : true,
+			      "latestCommit" : "78e9de23e1241148580b1b01ec306f09580f0806",
+			      "displayId" : "master"
+			   },
+			   {
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "latestCommit" : "96c2f654535b6221756bd485e2949e3ba6af3759",
+			      "isDefault" : false,
+			      "latestChangeset" : "96c2f654535b6221756bd485e2949e3ba6af3759",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle"
+			   },
+			   {
+			      "latestCommit" : "04195752d74774514601201a49202b8278e87a23",
+			      "isDefault" : false,
+			      "latestChangeset" : "04195752d74774514601201a49202b8278e87a23",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/test",
+			      "displayId" : "test"
+			   },
+			   {
+			      "displayId" : "TR-2811_java11_base_container",
+			      "latestChangeset" : "2cbf6023042e353ed52398bf7a1f4342d80afbcb",
+			      "isDefault" : false,
+			      "latestCommit" : "2cbf6023042e353ed52398bf7a1f4342d80afbcb",
+			      "id" : "refs/heads/TR-2811_java11_base_container",
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "id" : 399,
+			      "groups" : [],
+			      "users" : [],
+			      "matcher" : {
+			         "active" : true,
+			         "displayId" : "master",
+			         "id" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         }
+			      },
+			      "accessKeys" : [],
+			      "type" : "pull-request-only",
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      }
+			   }
+			]
+
+		}
+	}
+	::Repo:: openjdk8u-jre {
+		:::BRANCHES::: {
+			[
+			   {
+			      "latestCommit" : "0f5207843519afc054200143a7529ebe50720d44",
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "0f5207843519afc054200143a7529ebe50720d44",
+			      "isDefault" : false
+			   },
+			   {
+			      "isDefault" : true,
+			      "type" : "BRANCH",
+			      "latestChangeset" : "041e85eede5e25cf12d2fd93e8c54fe0c43f7a26",
+			      "displayId" : "master",
+			      "latestCommit" : "041e85eede5e25cf12d2fd93e8c54fe0c43f7a26",
+			      "id" : "refs/heads/master"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "id" : "master",
+			         "active" : true,
+			         "displayId" : "master"
+			      },
+			      "groups" : [],
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "accessKeys" : [],
+			      "id" : 399,
+			      "users" : [],
+			      "type" : "pull-request-only"
+			   }
+			]
+
+		}
+	}
+	::Repo:: openjre-11-splunk {
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : false,
+			      "displayId" : "auto-update-1.23.12",
+			      "latestChangeset" : "119881dd9f6b01c64c269dadbeda78fc4ec74ff5",
+			      "id" : "refs/heads/auto-update-1.23.12",
+			      "latestCommit" : "119881dd9f6b01c64c269dadbeda78fc4ec74ff5",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "latestCommit" : "988877518caeaa016ebe9ffdcaf26859ef30ebc3",
+			      "type" : "BRANCH",
+			      "displayId" : "master",
+			      "isDefault" : true,
+			      "id" : "refs/heads/master",
+			      "latestChangeset" : "988877518caeaa016ebe9ffdcaf26859ef30ebc3"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "latestCommit" : "bea5fe3d6e26e1873ca204fef3fc6b844a80c81c",
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "latestChangeset" : "bea5fe3d6e26e1873ca204fef3fc6b844a80c81c",
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "isDefault" : false
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "latestCommit" : "94205f1c1162ded6dac908619340da10a7e28240",
+			      "latestChangeset" : "94205f1c1162ded6dac908619340da10a7e28240",
+			      "id" : "refs/heads/auto-update-1.23.3",
+			      "isDefault" : false,
+			      "displayId" : "auto-update-1.23.3"
+			   },
+			   {
+			      "latestCommit" : "9d5469808d095abc4d98d8ad269c206a22073c8e",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "displayId" : "auto-update-1.22.2",
+			      "id" : "refs/heads/auto-update-1.22.2",
+			      "latestChangeset" : "9d5469808d095abc4d98d8ad269c206a22073c8e"
+			   },
+			   {
+			      "isDefault" : false,
+			      "displayId" : "main",
+			      "id" : "refs/heads/main",
+			      "latestChangeset" : "043a3740bc5287fa8e65e1183af59673c35942f4",
+			      "latestCommit" : "043a3740bc5287fa8e65e1183af59673c35942f4",
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "accessKeys" : [],
+			      "groups" : [],
+			      "matcher" : {
+			         "displayId" : "master",
+			         "active" : true,
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "id" : "master"
+			      },
+			      "id" : 399,
+			      "type" : "pull-request-only",
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "users" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: openjre-11-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "id" : "refs/heads/master",
+			      "isDefault" : true,
+			      "type" : "BRANCH",
+			      "latestCommit" : "82b18359a506a00215d17c2c32fc2e86f5a9c688",
+			      "displayId" : "master",
+			      "latestChangeset" : "82b18359a506a00215d17c2c32fc2e86f5a9c688"
+			   },
+			   {
+			      "latestChangeset" : "29e0d2df770d5a673ba423c5f154a89c8ef0e24f",
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "latestCommit" : "29e0d2df770d5a673ba423c5f154a89c8ef0e24f",
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "isDefault" : false,
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "id" : "refs/heads/auto-update-22.3.29",
+			      "displayId" : "auto-update-22.3.29",
+			      "latestCommit" : "fb1fa830b1739a9449316f784a4866781505da8f",
+			      "latestChangeset" : "fb1fa830b1739a9449316f784a4866781505da8f"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "id" : "refs/heads/auto-update-22.3.28",
+			      "latestChangeset" : "ede907d95e010d2e905a05ac3828986b2e2865b7",
+			      "displayId" : "auto-update-22.3.28",
+			      "latestCommit" : "ede907d95e010d2e905a05ac3828986b2e2865b7"
+			   },
+			   {
+			      "displayId" : "TR-3161_appdynamics_fails_to_start",
+			      "latestCommit" : "9c24fce62afd89eb6086cbf4344ba5c20fae8d33",
+			      "latestChangeset" : "9c24fce62afd89eb6086cbf4344ba5c20fae8d33",
+			      "id" : "refs/heads/TR-3161_appdynamics_fails_to_start",
+			      "isDefault" : false,
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "latestChangeset" : "d012ec96769cc0d2d86ea87d656748ca8e4c75b0",
+			      "displayId" : "TR-3196-update-openjdk-11-base-image",
+			      "latestCommit" : "d012ec96769cc0d2d86ea87d656748ca8e4c75b0",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/TR-3196-update-openjdk-11-base-image",
+			      "isDefault" : false
+			   },
+			   {
+			      "displayId" : "TR-2906-appdynamics-auto-instrumentation",
+			      "latestCommit" : "b25f84081f5e1ddc2da9833ebac052b9b3fed13f",
+			      "latestChangeset" : "b25f84081f5e1ddc2da9833ebac052b9b3fed13f",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/TR-2906-appdynamics-auto-instrumentation",
+			      "isDefault" : false
+			   },
+			   {
+			      "isDefault" : false,
+			      "id" : "refs/heads/TR-2906-appd-auto-instrumentation",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "bf1f0cc3efba55c0d53a20fcce303a1bab15d1c7",
+			      "displayId" : "TR-2906-appd-auto-instrumentation",
+			      "latestCommit" : "bf1f0cc3efba55c0d53a20fcce303a1bab15d1c7"
+			   },
+			   {
+			      "displayId" : "Test_new_base_image",
+			      "latestCommit" : "0ad9949a5abf8e35c404e6918b46e5f6612b7b97",
+			      "latestChangeset" : "0ad9949a5abf8e35c404e6918b46e5f6612b7b97",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/Test_new_base_image",
+			      "isDefault" : false
+			   },
+			   {
+			      "id" : "refs/heads/auto-update-21.1.24",
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "latestChangeset" : "88d38431cf975ac2534baef8838834529e5accfb",
+			      "displayId" : "auto-update-21.1.24",
+			      "latestCommit" : "88d38431cf975ac2534baef8838834529e5accfb"
+			   },
+			   {
+			      "latestCommit" : "45ce4d117de574985e6b92783fb599a098bcfaaf",
+			      "displayId" : "TR-1857-unregister-appd-log-to-elk",
+			      "latestChangeset" : "45ce4d117de574985e6b92783fb599a098bcfaaf",
+			      "isDefault" : false,
+			      "id" : "refs/heads/TR-1857-unregister-appd-log-to-elk",
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "matcher" : {
+			         "active" : true,
+			         "displayId" : "master",
+			         "id" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         }
+			      },
+			      "users" : [],
+			      "accessKeys" : [],
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "groups" : [],
+			      "type" : "pull-request-only",
+			      "id" : 399
+			   }
+			]
+
+		}
+	}
+	::Repo:: openjre-17-splunk {
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : false,
+			      "latestCommit" : "2532b16733b3198c3f7f86cf6e1a97c241230349",
+			      "id" : "refs/heads/auto-update-1.23.12",
+			      "displayId" : "auto-update-1.23.12",
+			      "latestChangeset" : "2532b16733b3198c3f7f86cf6e1a97c241230349",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "latestChangeset" : "47ee35d0c581c470c1c2937f20ee3d078089b115",
+			      "type" : "BRANCH",
+			      "displayId" : "master",
+			      "id" : "refs/heads/master",
+			      "latestCommit" : "47ee35d0c581c470c1c2937f20ee3d078089b115",
+			      "isDefault" : true
+			   },
+			   {
+			      "latestChangeset" : "8085c7378e8b7a876d77bae3d7171e35d767cffc",
+			      "type" : "BRANCH",
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "latestCommit" : "8085c7378e8b7a876d77bae3d7171e35d767cffc",
+			      "isDefault" : false
+			   },
+			   {
+			      "isDefault" : false,
+			      "latestCommit" : "1e204223c1b3efbad9143382a1465a9f7dfa8d98",
+			      "id" : "refs/heads/auto-update-1.23.3",
+			      "displayId" : "auto-update-1.23.3",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "1e204223c1b3efbad9143382a1465a9f7dfa8d98"
+			   },
+			   {
+			      "displayId" : "auto-update-1.22.2",
+			      "id" : "refs/heads/auto-update-1.22.2",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "9b54b6e9b3f7618c7572793891334eac968488f7",
+			      "isDefault" : false,
+			      "latestCommit" : "9b54b6e9b3f7618c7572793891334eac968488f7"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "users" : [],
+			      "groups" : [],
+			      "matcher" : {
+			         "displayId" : "master",
+			         "id" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         },
+			         "active" : true
+			      },
+			      "accessKeys" : [],
+			      "type" : "pull-request-only",
+			      "id" : 399,
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      }
+			   }
+			]
+
+		}
+	}
+	::Repo:: openjre-17-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "displayId" : "master",
+			      "latestCommit" : "a3fcec7cf931e6377e3a9f396d9d50b8040418c6",
+			      "latestChangeset" : "a3fcec7cf931e6377e3a9f396d9d50b8040418c6",
+			      "id" : "refs/heads/master",
+			      "isDefault" : true,
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "latestCommit" : "95b86f1181ea5a0bdbe1bd73b894f2720ab1e128",
+			      "latestChangeset" : "95b86f1181ea5a0bdbe1bd73b894f2720ab1e128",
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "type" : "BRANCH",
+			      "isDefault" : false
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "matcher" : {
+			         "displayId" : "master",
+			         "id" : "master",
+			         "active" : true,
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         }
+			      },
+			      "users" : [],
+			      "accessKeys" : [],
+			      "groups" : [],
+			      "type" : "pull-request-only",
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "id" : 399
+			   }
+			]
+
+		}
+	}
+	::Repo:: openjre-21-splunk {
+		:::BRANCHES::: {
+			[
+			   {
+			      "type" : "BRANCH",
+			      "latestCommit" : "0e764c979e929f4e5cf7b78657d96d672b2e7e65",
+			      "id" : "refs/heads/master",
+			      "latestChangeset" : "0e764c979e929f4e5cf7b78657d96d672b2e7e65",
+			      "isDefault" : true,
+			      "displayId" : "master"
+			   },
+			   {
+			      "latestChangeset" : "88f169c962a2ad10a64a01c559c34f5eba6d5180",
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "latestCommit" : "88f169c962a2ad10a64a01c559c34f5eba6d5180"
+			   },
+			   {
+			      "latestCommit" : "57f692941be154f90b169851ddd20e35784309c0",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "displayId" : "PEHR-1556",
+			      "id" : "refs/heads/PEHR-1556",
+			      "latestChangeset" : "57f692941be154f90b169851ddd20e35784309c0"
+			   },
+			   {
+			      "latestCommit" : "617c943b71a255e00d97f0df195614288939eabc",
+			      "type" : "BRANCH",
+			      "displayId" : "main",
+			      "isDefault" : false,
+			      "id" : "refs/heads/main",
+			      "latestChangeset" : "617c943b71a255e00d97f0df195614288939eabc"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "id" : 399,
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "users" : [],
+			      "type" : "pull-request-only",
+			      "accessKeys" : [],
+			      "matcher" : {
+			         "displayId" : "master",
+			         "active" : true,
+			         "id" : "master",
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         }
+			      },
+			      "groups" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-appd-dotnet-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "id" : "refs/heads/master",
+			      "displayId" : "master",
+			      "latestCommit" : "4e1226770c1935bed19dface7bb35151ac19cfbd",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "4e1226770c1935bed19dface7bb35151ac19cfbd",
+			      "isDefault" : true
+			   },
+			   {
+			      "isDefault" : false,
+			      "latestChangeset" : "59d58b2ea6e387f983050ccf7116cca0d060520d",
+			      "latestCommit" : "59d58b2ea6e387f983050ccf7116cca0d060520d",
+			      "type" : "BRANCH",
+			      "displayId" : "auto-update-18.04.30",
+			      "id" : "refs/heads/auto-update-18.04.30"
+			   },
+			   {
+			      "displayId" : "TR-2870-Update_appd_dotnet_base_image_to_mitigate_log4j_cve",
+			      "id" : "refs/heads/TR-2870-Update_appd_dotnet_base_image_to_mitigate_log4j_cve",
+			      "latestCommit" : "aa2eac0d8b5bebe4a53eeab8e985d43b184edc73",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "aa2eac0d8b5bebe4a53eeab8e985d43b184edc73",
+			      "isDefault" : false
+			   },
+			   {
+			      "id" : "refs/heads/auto-update-18.04.28",
+			      "displayId" : "auto-update-18.04.28",
+			      "type" : "BRANCH",
+			      "latestCommit" : "dd8010283015f1b7dd83ca33658f22c6803fb669",
+			      "latestChangeset" : "dd8010283015f1b7dd83ca33658f22c6803fb669",
+			      "isDefault" : false
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "matcher" : {
+			         "active" : true,
+			         "id" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         },
+			         "displayId" : "master"
+			      },
+			      "groups" : [],
+			      "id" : 399,
+			      "type" : "pull-request-only",
+			      "accessKeys" : [],
+			      "users" : [],
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      }
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-appd-jre {
+		:::BRANCHES::: {
+			[
+			   {
+			      "displayId" : "Remove_jndilookup_class_from_appd_agent",
+			      "latestChangeset" : "728fc18f16642509adb190dad2bc0b9d0b615204",
+			      "latestCommit" : "728fc18f16642509adb190dad2bc0b9d0b615204",
+			      "isDefault" : false,
+			      "id" : "refs/heads/Remove_jndilookup_class_from_appd_agent",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "latestCommit" : "918b1c040a04ea9f9eaf552c1826ffe7182f0bd0",
+			      "latestChangeset" : "918b1c040a04ea9f9eaf552c1826ffe7182f0bd0",
+			      "id" : "refs/heads/master",
+			      "type" : "BRANCH",
+			      "isDefault" : true,
+			      "displayId" : "master"
+			   },
+			   {
+			      "displayId" : "appd-jdk11",
+			      "id" : "refs/heads/appd-jdk11",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "latestCommit" : "362b01be3a96711e2994af6888f969ee1a87c985",
+			      "latestChangeset" : "362b01be3a96711e2994af6888f969ee1a87c985"
+			   },
+			   {
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/update_base",
+			      "latestChangeset" : "27b29de352a6cdce0f967728587ff60656189544",
+			      "latestCommit" : "27b29de352a6cdce0f967728587ff60656189544",
+			      "displayId" : "update_base"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "matcher" : {
+			         "displayId" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         },
+			         "active" : true,
+			         "id" : "master"
+			      },
+			      "type" : "pull-request-only",
+			      "users" : [],
+			      "accessKeys" : [],
+			      "id" : 399,
+			      "groups" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-appd-jre-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "type" : "BRANCH",
+			      "latestCommit" : "ff611233f2cc164a9a9b2ebc0d70e22a0e44d56c",
+			      "displayId" : "master",
+			      "latestChangeset" : "ff611233f2cc164a9a9b2ebc0d70e22a0e44d56c",
+			      "isDefault" : true,
+			      "id" : "refs/heads/master"
+			   },
+			   {
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "latestCommit" : "07e84c5a6b3168562ded76f333a032cb055d9a8c",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "latestChangeset" : "07e84c5a6b3168562ded76f333a032cb055d9a8c",
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle"
+			   },
+			   {
+			      "latestCommit" : "1bb9c25c155501bf9af6d6de753c97c3fbaa71c0",
+			      "type" : "BRANCH",
+			      "displayId" : "debug_m1",
+			      "latestChangeset" : "1bb9c25c155501bf9af6d6de753c97c3fbaa71c0",
+			      "isDefault" : false,
+			      "id" : "refs/heads/debug_m1"
+			   },
+			   {
+			      "id" : "refs/heads/auto-update-22.04.32",
+			      "latestCommit" : "4b0012d55c695a32d17fd6f66074106fe3b66f42",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "4b0012d55c695a32d17fd6f66074106fe3b66f42",
+			      "displayId" : "auto-update-22.04.32",
+			      "isDefault" : false
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "latestCommit" : "fbc8fd3ae6149eeaaa56b5f9a12d27e8fa3fed06",
+			      "isDefault" : false,
+			      "latestChangeset" : "fbc8fd3ae6149eeaaa56b5f9a12d27e8fa3fed06",
+			      "displayId" : "auto-update-18.04.30",
+			      "id" : "refs/heads/auto-update-18.04.30"
+			   },
+			   {
+			      "id" : "refs/heads/auto-update-18.04.29",
+			      "displayId" : "auto-update-18.04.29",
+			      "latestChangeset" : "312b99c695ba3e57e511551435c628fedbbf70b4",
+			      "isDefault" : false,
+			      "latestCommit" : "312b99c695ba3e57e511551435c628fedbbf70b4",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "id" : "refs/heads/Updated_appd_agent",
+			      "displayId" : "Updated_appd_agent",
+			      "latestChangeset" : "d370a337ebdbfc6c4fb114c854e65833b1a20911",
+			      "isDefault" : false,
+			      "latestCommit" : "d370a337ebdbfc6c4fb114c854e65833b1a20911",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "isDefault" : false,
+			      "latestChangeset" : "84d70fdce05274eff12e1b3bb70b7042864f340a",
+			      "displayId" : "TR-2966-Change_base_os_version",
+			      "latestCommit" : "84d70fdce05274eff12e1b3bb70b7042864f340a",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/TR-2966-Change_base_os_version"
+			   },
+			   {
+			      "id" : "refs/heads/TR-2906-appd-auto-instrumentation",
+			      "type" : "BRANCH",
+			      "latestCommit" : "b968a1b1c6401fbb2f4cd7f152db94f33870f6be",
+			      "isDefault" : false,
+			      "latestChangeset" : "b968a1b1c6401fbb2f4cd7f152db94f33870f6be",
+			      "displayId" : "TR-2906-appd-auto-instrumentation"
+			   },
+			   {
+			      "latestChangeset" : "8ed9ee608b05c97b9b9b1113b8c0d5c79329e451",
+			      "displayId" : "auto-update-18.04.28",
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "latestCommit" : "8ed9ee608b05c97b9b9b1113b8c0d5c79329e451",
+			      "id" : "refs/heads/auto-update-18.04.28"
+			   },
+			   {
+			      "latestCommit" : "cdd64f646bcffdf35244a36fd8745334947ed100",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "displayId" : "auto-update-18.04.25",
+			      "latestChangeset" : "cdd64f646bcffdf35244a36fd8745334947ed100",
+			      "id" : "refs/heads/auto-update-18.04.25"
+			   },
+			   {
+			      "id" : "refs/heads/TR-1857-unregister-appd-log-to-elk",
+			      "isDefault" : false,
+			      "latestChangeset" : "890d8671984e9ca96a0bbec092b2b934f15788d0",
+			      "displayId" : "TR-1857-unregister-appd-log-to-elk",
+			      "type" : "BRANCH",
+			      "latestCommit" : "890d8671984e9ca96a0bbec092b2b934f15788d0"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "matcher" : {
+			         "active" : true,
+			         "id" : "master",
+			         "displayId" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         }
+			      },
+			      "id" : 399,
+			      "users" : [],
+			      "groups" : [],
+			      "accessKeys" : [],
+			      "type" : "pull-request-only"
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-base {
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : false,
+			      "latestChangeset" : "e2a8e7eb1ad6e96a2055f79d98aa5d98118b9edb",
+			      "latestCommit" : "e2a8e7eb1ad6e96a2055f79d98aa5d98118b9edb",
+			      "displayId" : "update_xenial_base_image",
+			      "id" : "refs/heads/update_xenial_base_image",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/TR-1776-make-service-bamboo-agent-use-ECR",
+			      "displayId" : "TR-1776-make-service-bamboo-agent-use-ECR",
+			      "latestCommit" : "d8002f880158c60b830634bce7178a9799feed07",
+			      "isDefault" : false,
+			      "latestChangeset" : "d8002f880158c60b830634bce7178a9799feed07"
+			   },
+			   {
+			      "id" : "refs/heads/master",
+			      "type" : "BRANCH",
+			      "isDefault" : true,
+			      "latestChangeset" : "353018af208dfe261e7e5c29160bfc4a4db0dbfa",
+			      "latestCommit" : "353018af208dfe261e7e5c29160bfc4a4db0dbfa",
+			      "displayId" : "master"
+			   },
+			   {
+			      "id" : "refs/heads/update-ubuntu-bionic",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "latestChangeset" : "235e3e9bcb0d17936e7608cd621b5b20cac9d476",
+			      "latestCommit" : "235e3e9bcb0d17936e7608cd621b5b20cac9d476",
+			      "displayId" : "update-ubuntu-bionic"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/ubuntu_xenial_20180123",
+			      "displayId" : "ubuntu_xenial_20180123",
+			      "latestCommit" : "3d9e6ce6e093d40eca397258a9512824c01e6dcd",
+			      "latestChangeset" : "3d9e6ce6e093d40eca397258a9512824c01e6dcd",
+			      "isDefault" : false
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/xenial-20171006",
+			      "latestChangeset" : "f3bd985e0132dc75f78149d758abc1f225069ff2",
+			      "isDefault" : false,
+			      "displayId" : "xenial-20171006",
+			      "latestCommit" : "f3bd985e0132dc75f78149d758abc1f225069ff2"
+			   },
+			   {
+			      "isDefault" : false,
+			      "latestChangeset" : "75c20eb332bec6358d0446e4ba85cdff1cab351d",
+			      "displayId" : "DEVOPS-637_mask_env",
+			      "latestCommit" : "75c20eb332bec6358d0446e4ba85cdff1cab351d",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/DEVOPS-637_mask_env"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/update",
+			      "isDefault" : false,
+			      "latestChangeset" : "46b97ed87ba81fb294eb16dcb9ef3f66f87a773f",
+			      "displayId" : "update",
+			      "latestCommit" : "46b97ed87ba81fb294eb16dcb9ef3f66f87a773f"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/update_job",
+			      "displayId" : "update_job",
+			      "latestCommit" : "dcb1a81aeec143efb0014a4299456193c594ea7f",
+			      "isDefault" : false,
+			      "latestChangeset" : "dcb1a81aeec143efb0014a4299456193c594ea7f"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/update_123",
+			      "isDefault" : false,
+			      "latestChangeset" : "238cc04633cc25f3bb3efee2cfff5d67d00aa1b7",
+			      "displayId" : "update_123",
+			      "latestCommit" : "238cc04633cc25f3bb3efee2cfff5d67d00aa1b7"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "users" : [],
+			      "groups" : [],
+			      "matcher" : {
+			         "active" : true,
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "displayId" : "master",
+			         "id" : "master"
+			      },
+			      "accessKeys" : [],
+			      "id" : 399,
+			      "type" : "pull-request-only"
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-base-v2 {
+		::: REPO PERMISSIONS (groups) ::: {[
+		   {
+		      "group" : {
+		         "name" : "developers"
+		      },
+		      "permission" : "REPO_READ"
+		   }
+		]}
+
+		:::BRANCHES::: {
+			[
+			   {
+			      "id" : "refs/heads/master",
+			      "latestChangeset" : "7386abcd23ffd4639493e8b2cefcf87c948a55d9",
+			      "type" : "BRANCH",
+			      "latestCommit" : "7386abcd23ffd4639493e8b2cefcf87c948a55d9",
+			      "isDefault" : true,
+			      "displayId" : "master"
+			   },
+			   {
+			      "latestChangeset" : "9ca4d1e6b7bd79401301cf275eb67c6536e22b3b",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/debug_m1",
+			      "latestCommit" : "9ca4d1e6b7bd79401301cf275eb67c6536e22b3b",
+			      "isDefault" : false,
+			      "displayId" : "debug_m1"
+			   },
+			   {
+			      "id" : "refs/heads/feature/TR-3127-node-14-and-16-docker-base-image",
+			      "latestChangeset" : "4a306fa6f485b70e00ad4278f58e8bb1dead6dd9",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "displayId" : "feature/TR-3127-node-14-and-16-docker-base-image",
+			      "latestCommit" : "4a306fa6f485b70e00ad4278f58e8bb1dead6dd9"
+			   },
+			   {
+			      "latestCommit" : "7c2a54be645580a138ca1c3b9d48d0911f0f1648",
+			      "isDefault" : false,
+			      "displayId" : "TR-2906-appdynamics-auto-instrumentation",
+			      "latestChangeset" : "7c2a54be645580a138ca1c3b9d48d0911f0f1648",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/TR-2906-appdynamics-auto-instrumentation"
+			   },
+			   {
+			      "isDefault" : false,
+			      "displayId" : "TR-2906-appd-auto-instrumentation",
+			      "latestCommit" : "b3410eba2cd8896235665c1a256b7f66f93f4562",
+			      "latestChangeset" : "b3410eba2cd8896235665c1a256b7f66f93f4562",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/TR-2906-appd-auto-instrumentation"
+			   },
+			   {
+			      "latestChangeset" : "e8041532b04e92c5b4c6451ae8759c761aeebcef",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/TR-1857_prestop_exit",
+			      "latestCommit" : "e8041532b04e92c5b4c6451ae8759c761aeebcef",
+			      "isDefault" : false,
+			      "displayId" : "TR-1857_prestop_exit"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "groups" : [],
+			      "accessKeys" : [],
+			      "id" : 399,
+			      "users" : [],
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "active" : true,
+			         "displayId" : "master",
+			         "id" : "master"
+			      },
+			      "type" : "pull-request-only",
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      }
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-jre10 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "latestChangeset" : "99ffa7f0d0363a36efee797d79c136d9a5a2c507",
+			      "displayId" : "updateDockerFrom",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/updateDockerFrom",
+			      "isDefault" : false,
+			      "latestCommit" : "99ffa7f0d0363a36efee797d79c136d9a5a2c507"
+			   },
+			   {
+			      "isDefault" : true,
+			      "latestCommit" : "031decdc16216b6022386a34e83f77c926f6a679",
+			      "id" : "refs/heads/master",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "031decdc16216b6022386a34e83f77c926f6a679",
+			      "displayId" : "master"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "matcher" : {
+			         "id" : "master",
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "active" : true,
+			         "displayId" : "master"
+			      },
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "groups" : [],
+			      "type" : "pull-request-only",
+			      "accessKeys" : [],
+			      "users" : [],
+			      "id" : 399
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-jre7 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "latestChangeset" : "275b93f8b096535969ba59f9997244ba8e63ec2d",
+			      "displayId" : "master",
+			      "id" : "refs/heads/master",
+			      "isDefault" : true,
+			      "latestCommit" : "275b93f8b096535969ba59f9997244ba8e63ec2d",
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "accessKeys" : [],
+			      "users" : [],
+			      "groups" : [],
+			      "type" : "pull-request-only",
+			      "id" : 399,
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "matcher" : {
+			         "id" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         },
+			         "displayId" : "master",
+			         "active" : true
+			      }
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-jre8 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "type" : "BRANCH",
+			      "latestChangeset" : "4c14140417c46edaf4a40cd82d0b69ee7bf38518",
+			      "isDefault" : false,
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "latestCommit" : "4c14140417c46edaf4a40cd82d0b69ee7bf38518"
+			   },
+			   {
+			      "latestCommit" : "933d6e1928a874ea8eceba3cbfbc9fdf29c2a648",
+			      "displayId" : "master",
+			      "id" : "refs/heads/master",
+			      "isDefault" : true,
+			      "type" : "BRANCH",
+			      "latestChangeset" : "933d6e1928a874ea8eceba3cbfbc9fdf29c2a648"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "latestChangeset" : "2557eeeabbcc07637c6505dc1ab6e278108c706c",
+			      "id" : "refs/heads/TR-2870-Fix_for_log4j_to_mitigate_CVE-2021-44228",
+			      "isDefault" : false,
+			      "latestCommit" : "2557eeeabbcc07637c6505dc1ab6e278108c706c",
+			      "displayId" : "TR-2870-Fix_for_log4j_to_mitigate_CVE-2021-44228"
+			   },
+			   {
+			      "displayId" : "DEVOPS-631_java_version",
+			      "latestCommit" : "f56aa7f77a4fac5440e4d22e236e3689509b7afb",
+			      "id" : "refs/heads/DEVOPS-631_java_version",
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "latestChangeset" : "f56aa7f77a4fac5440e4d22e236e3689509b7afb"
+			   },
+			   {
+			      "displayId" : "DEVOPS-631",
+			      "latestCommit" : "91d7a3b4d6eb3a9f9eecda182a19d6ae2cff2c2a",
+			      "isDefault" : false,
+			      "id" : "refs/heads/DEVOPS-631",
+			      "latestChangeset" : "91d7a3b4d6eb3a9f9eecda182a19d6ae2cff2c2a",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "displayId" : "tools_jar",
+			      "latestCommit" : "630bfa41e98f4947f1adb6b68efcd138d49848ff",
+			      "isDefault" : false,
+			      "id" : "refs/heads/tools_jar",
+			      "latestChangeset" : "630bfa41e98f4947f1adb6b68efcd138d49848ff",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "displayId" : "new_java_version",
+			      "latestCommit" : "ee2b537734479753f763702c1a7ed245a06612ba",
+			      "id" : "refs/heads/new_java_version",
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "latestChangeset" : "ee2b537734479753f763702c1a7ed245a06612ba"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "accessKeys" : [],
+			      "groups" : [],
+			      "matcher" : {
+			         "displayId" : "master",
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "id" : "master",
+			         "active" : true
+			      },
+			      "type" : "pull-request-only",
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "id" : 399,
+			      "users" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-jre8-custom {
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "id" : 399,
+			      "groups" : [],
+			      "accessKeys" : [],
+			      "matcher" : {
+			         "active" : false,
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "displayId" : "master",
+			         "id" : "master"
+			      },
+			      "type" : "pull-request-only",
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "users" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-jre8-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "latestCommit" : "dda38b0ebb944fa5e04670828ba3fcf534dc699f",
+			      "latestChangeset" : "dda38b0ebb944fa5e04670828ba3fcf534dc699f",
+			      "displayId" : "auto-update-22.3.31",
+			      "isDefault" : false,
+			      "id" : "refs/heads/auto-update-22.3.31",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "isDefault" : false,
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "latestChangeset" : "cb14acc7f9f6e8ad2d66f964ec3d843700f93ae3",
+			      "latestCommit" : "cb14acc7f9f6e8ad2d66f964ec3d843700f93ae3",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "displayId" : "master",
+			      "latestChangeset" : "09770775bc3c146c850466be2f72c251583dcfcc",
+			      "id" : "refs/heads/master",
+			      "isDefault" : true,
+			      "latestCommit" : "09770775bc3c146c850466be2f72c251583dcfcc"
+			   },
+			   {
+			      "latestCommit" : "839b696d02be078780a478ac1855e56f8b04226c",
+			      "latestChangeset" : "839b696d02be078780a478ac1855e56f8b04226c",
+			      "displayId" : "auto-update-22.3.29",
+			      "id" : "refs/heads/auto-update-22.3.29",
+			      "isDefault" : false,
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "displayId" : "auto-update-22.3.28",
+			      "latestChangeset" : "65f758f26e79d0dde5c2563d3e3218fe973afe22",
+			      "isDefault" : false,
+			      "id" : "refs/heads/auto-update-22.3.28",
+			      "latestCommit" : "65f758f26e79d0dde5c2563d3e3218fe973afe22",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "latestCommit" : "05600071d85055e823309eb793094975a2e5ecc0",
+			      "isDefault" : false,
+			      "id" : "refs/heads/update-base-image",
+			      "latestChangeset" : "05600071d85055e823309eb793094975a2e5ecc0",
+			      "displayId" : "update-base-image"
+			   },
+			   {
+			      "isDefault" : false,
+			      "id" : "refs/heads/Updated_appd_agent",
+			      "latestChangeset" : "40a7424ae081c2612da808993b8cdbb3d74f94a2",
+			      "displayId" : "Updated_appd_agent",
+			      "latestCommit" : "40a7424ae081c2612da808993b8cdbb3d74f94a2",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "latestCommit" : "dc790f86f37f5b632aa056cfc74bb2ce187721ea",
+			      "isDefault" : false,
+			      "id" : "refs/heads/TR-2966-Change_appd_base_image",
+			      "displayId" : "TR-2966-Change_appd_base_image",
+			      "latestChangeset" : "dc790f86f37f5b632aa056cfc74bb2ce187721ea",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "latestCommit" : "02f7d6e5a259e32ca32104a69e9df9bb7d93012e",
+			      "id" : "refs/heads/TR-2870-Update_appd_base_image_to_mitigate_log4j_CVE-2021-44228",
+			      "isDefault" : false,
+			      "latestChangeset" : "02f7d6e5a259e32ca32104a69e9df9bb7d93012e",
+			      "displayId" : "TR-2870-Update_appd_base_image_to_mitigate_log4j_CVE-2021-44228",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "latestCommit" : "7e5575c9e4485ed2c6923c19b7de03b657cb79c9",
+			      "displayId" : "auto-update-21.1.24",
+			      "latestChangeset" : "7e5575c9e4485ed2c6923c19b7de03b657cb79c9",
+			      "id" : "refs/heads/auto-update-21.1.24",
+			      "isDefault" : false,
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "accessKeys" : [],
+			      "users" : [],
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "groups" : [],
+			      "matcher" : {
+			         "id" : "master",
+			         "active" : true,
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "displayId" : "master"
+			      },
+			      "id" : 399,
+			      "type" : "pull-request-only"
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-jre8-v2-splunk {
+		:::BRANCHES::: {
+			[
+			   {
+			      "latestCommit" : "626fa18125dc43c9a6674ceab93212e15a158ddd",
+			      "latestChangeset" : "626fa18125dc43c9a6674ceab93212e15a158ddd",
+			      "isDefault" : false,
+			      "id" : "refs/heads/auto-update-1.23.12",
+			      "type" : "BRANCH",
+			      "displayId" : "auto-update-1.23.12"
+			   },
+			   {
+			      "displayId" : "master",
+			      "type" : "BRANCH",
+			      "isDefault" : true,
+			      "id" : "refs/heads/master",
+			      "latestChangeset" : "03e735605f9d5cbeaad5bb646f00398063f28b35",
+			      "latestCommit" : "03e735605f9d5cbeaad5bb646f00398063f28b35"
+			   },
+			   {
+			      "latestCommit" : "1f814d3966b7c03354b6767054c090cdea00ac17",
+			      "latestChangeset" : "1f814d3966b7c03354b6767054c090cdea00ac17",
+			      "isDefault" : false,
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "type" : "BRANCH",
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle"
+			   },
+			   {
+			      "latestChangeset" : "db55cf4ae76ca1ab82bc099f3a53e6c75cfbdb79",
+			      "latestCommit" : "db55cf4ae76ca1ab82bc099f3a53e6c75cfbdb79",
+			      "displayId" : "auto-update-1.23.3",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/auto-update-1.23.3",
+			      "isDefault" : false
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "displayId" : "auto-update-1.22.2",
+			      "isDefault" : false,
+			      "id" : "refs/heads/auto-update-1.22.2",
+			      "latestChangeset" : "f4f89e4bfaf96c25e30c75097cc1fbc289f7d42c",
+			      "latestCommit" : "f4f89e4bfaf96c25e30c75097cc1fbc289f7d42c"
+			   },
+			   {
+			      "latestCommit" : "a3e7fdb223e7396ad3067e1b45d7ff75254a1371",
+			      "latestChangeset" : "a3e7fdb223e7396ad3067e1b45d7ff75254a1371",
+			      "isDefault" : false,
+			      "id" : "refs/heads/main",
+			      "type" : "BRANCH",
+			      "displayId" : "main"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "users" : [],
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "groups" : [],
+			      "id" : 399,
+			      "accessKeys" : [],
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "active" : true,
+			         "displayId" : "master",
+			         "id" : "master"
+			      },
+			      "type" : "pull-request-only"
+			   },
+			   {
+			      "matcher" : {
+			         "id" : "refs/heads/main",
+			         "displayId" : "main",
+			         "active" : true,
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         }
+			      },
+			      "type" : "pull-request-only",
+			      "users" : [],
+			      "accessKeys" : [],
+			      "scope" : {
+			         "resourceId" : 7462,
+			         "type" : "REPOSITORY"
+			      },
+			      "groups" : [],
+			      "id" : 3002
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-jre8-v3 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "latestCommit" : "172faa461e9b7a0b86e2de01896552c66db3299c",
+			      "isDefault" : false,
+			      "displayId" : "PEHR-1791-update-rds-cert-bundle",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/PEHR-1791-update-rds-cert-bundle",
+			      "latestChangeset" : "172faa461e9b7a0b86e2de01896552c66db3299c"
+			   },
+			   {
+			      "latestCommit" : "1c846466788c533fa0340b0d27c54f898e9aa874",
+			      "isDefault" : true,
+			      "displayId" : "master",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/master",
+			      "latestChangeset" : "1c846466788c533fa0340b0d27c54f898e9aa874"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "groups" : [],
+			      "type" : "pull-request-only",
+			      "id" : 399,
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "matcher" : {
+			         "displayId" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         },
+			         "active" : true,
+			         "id" : "master"
+			      },
+			      "accessKeys" : [],
+			      "users" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-jre9 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "latestChangeset" : "4b0620e0167099d40e6f116c9d6effd3543442db",
+			      "type" : "BRANCH",
+			      "displayId" : "master",
+			      "latestCommit" : "4b0620e0167099d40e6f116c9d6effd3543442db",
+			      "isDefault" : true,
+			      "id" : "refs/heads/master"
+			   },
+			   {
+			      "isDefault" : false,
+			      "latestCommit" : "ca1f093db7716a1fc0551916eed523521534697f",
+			      "id" : "refs/heads/feature/appd",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "ca1f093db7716a1fc0551916eed523521534697f",
+			      "displayId" : "feature/appd"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "type" : "pull-request-only",
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "active" : true,
+			         "displayId" : "master",
+			         "id" : "master"
+			      },
+			      "id" : 399,
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "groups" : [],
+			      "accessKeys" : [],
+			      "users" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-nodejs10 {
+		::: REPO PERMISSIONS (groups) ::: {[
+		   {
+		      "group" : {
+		         "name" : "developers"
+		      },
+		      "permission" : "REPO_ADMIN"
+		   },
+		   {
+		      "permission" : "REPO_ADMIN",
+		      "group" : {
+		         "name" : "devops"
+		      }
+		   }
+		]}
+
+		:::BRANCHES::: {
+			[
+			   {
+			      "id" : "refs/heads/master",
+			      "isDefault" : true,
+			      "latestCommit" : "8f4143aa001e79a8cddf8f2b68964f21c8f9dc06",
+			      "latestChangeset" : "8f4143aa001e79a8cddf8f2b68964f21c8f9dc06",
+			      "type" : "BRANCH",
+			      "displayId" : "master"
+			   },
+			   {
+			      "isDefault" : false,
+			      "id" : "refs/heads/TR-1345_rds_ca",
+			      "latestCommit" : "11e5a81d6470371225404cbe28523e99c0cd3ba2",
+			      "latestChangeset" : "11e5a81d6470371225404cbe28523e99c0cd3ba2",
+			      "displayId" : "TR-1345_rds_ca",
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "type" : "pull-request-only",
+			      "users" : [],
+			      "matcher" : {
+			         "displayId" : "master",
+			         "active" : true,
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "id" : "master"
+			      },
+			      "accessKeys" : [],
+			      "id" : 399,
+			      "groups" : [],
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      }
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-nodejs10-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "displayId" : "master",
+			      "latestCommit" : "9cde593405e594a88b3408be41a369612c921878",
+			      "latestChangeset" : "9cde593405e594a88b3408be41a369612c921878",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/master",
+			      "isDefault" : true
+			   },
+			   {
+			      "displayId" : "auto-update-18.04.30",
+			      "latestCommit" : "b5a42663fa496c7956ebfe624512d02a4a21310b",
+			      "isDefault" : false,
+			      "id" : "refs/heads/auto-update-18.04.30",
+			      "latestChangeset" : "b5a42663fa496c7956ebfe624512d02a4a21310b",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "displayId" : "mitigate-log4j-vulnerability",
+			      "latestCommit" : "5b55601b7e2069c65b7760d221d538499b249cf7",
+			      "id" : "refs/heads/mitigate-log4j-vulnerability",
+			      "latestChangeset" : "5b55601b7e2069c65b7760d221d538499b249cf7",
+			      "type" : "BRANCH",
+			      "isDefault" : false
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "accessKeys" : [],
+			      "id" : 399,
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "active" : true,
+			         "displayId" : "master",
+			         "id" : "master"
+			      },
+			      "users" : [],
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "type" : "pull-request-only",
+			      "groups" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-nodejs12 {
+		::: REPO PERMISSIONS (groups) ::: {[
+		   {
+		      "permission" : "REPO_ADMIN",
+		      "group" : {
+		         "name" : "developers"
+		      }
+		   }
+		]}
+
+		:::BRANCHES::: {
+			[
+			   {
+			      "displayId" : "TR-2889-mitigate-log4j-vulnerability",
+			      "type" : "BRANCH",
+			      "latestCommit" : "8cf33c7d252026e71968e129e41d9035cae42d8e",
+			      "isDefault" : false,
+			      "id" : "refs/heads/TR-2889-mitigate-log4j-vulnerability",
+			      "latestChangeset" : "8cf33c7d252026e71968e129e41d9035cae42d8e"
+			   },
+			   {
+			      "id" : "refs/heads/master",
+			      "isDefault" : true,
+			      "latestCommit" : "f90b9cd9d90a9707e5429d338c6e9cc0e5361a27",
+			      "latestChangeset" : "f90b9cd9d90a9707e5429d338c6e9cc0e5361a27",
+			      "displayId" : "master",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "latestChangeset" : "449a224d3f1bed7faaf28703d012c051fd553638",
+			      "latestCommit" : "449a224d3f1bed7faaf28703d012c051fd553638",
+			      "isDefault" : false,
+			      "id" : "refs/heads/node-v12.15.0LTS",
+			      "type" : "BRANCH",
+			      "displayId" : "node-v12.15.0LTS"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "type" : "pull-request-only",
+			      "users" : [],
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "groups" : [],
+			      "id" : 399,
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "displayId" : "master",
+			         "active" : true,
+			         "id" : "master"
+			      },
+			      "accessKeys" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-nodejs12-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : true,
+			      "id" : "refs/heads/master",
+			      "displayId" : "master",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "862ec4f2969da13944a23a4a02d75ea2ae6170e9",
+			      "latestCommit" : "862ec4f2969da13944a23a4a02d75ea2ae6170e9"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "latestCommit" : "9cdad382678d81dae5469df318d5008392af807d",
+			      "latestChangeset" : "9cdad382678d81dae5469df318d5008392af807d",
+			      "id" : "refs/heads/auto-update-18.04.30",
+			      "isDefault" : false,
+			      "displayId" : "auto-update-18.04.30"
+			   },
+			   {
+			      "displayId" : "TR-2889-mitigate-log4j-vulnerability",
+			      "isDefault" : false,
+			      "id" : "refs/heads/TR-2889-mitigate-log4j-vulnerability",
+			      "latestCommit" : "36d24423e922d2d889fc3151967e3e286562a546",
+			      "latestChangeset" : "36d24423e922d2d889fc3151967e3e286562a546",
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "type" : "pull-request-only",
+			      "users" : [],
+			      "groups" : [],
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "displayId" : "master",
+			         "active" : true,
+			         "id" : "master"
+			      },
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "accessKeys" : [],
+			      "id" : 399
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-nodejs14-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "type" : "BRANCH",
+			      "latestChangeset" : "cd8c270a6ed433a781147e69f26b5927510165fe",
+			      "latestCommit" : "cd8c270a6ed433a781147e69f26b5927510165fe",
+			      "isDefault" : true,
+			      "id" : "refs/heads/master",
+			      "displayId" : "master"
+			   },
+			   {
+			      "latestCommit" : "78e6fe969e8114eed12ed73fcc627db172487ab0",
+			      "latestChangeset" : "78e6fe969e8114eed12ed73fcc627db172487ab0",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "displayId" : "auto-update-22.04.31",
+			      "id" : "refs/heads/auto-update-22.04.31"
+			   },
+			   {
+			      "latestChangeset" : "e6844fa84fa110994c59d9b454e3b6604ea1c63a",
+			      "type" : "BRANCH",
+			      "latestCommit" : "e6844fa84fa110994c59d9b454e3b6604ea1c63a",
+			      "isDefault" : false,
+			      "id" : "refs/heads/auto-update-18.04.30",
+			      "displayId" : "auto-update-18.04.30"
+			   },
+			   {
+			      "latestChangeset" : "9dd5fa88b64bd8281bc4278568dfa22bf9d3ac80",
+			      "type" : "BRANCH",
+			      "latestCommit" : "9dd5fa88b64bd8281bc4278568dfa22bf9d3ac80",
+			      "isDefault" : false,
+			      "id" : "refs/heads/feature/TR-3127-node-14-and-16-docker-base-image",
+			      "displayId" : "feature/TR-3127-node-14-and-16-docker-base-image"
+			   },
+			   {
+			      "displayId" : "mitigate-log4j-vulnerability",
+			      "id" : "refs/heads/mitigate-log4j-vulnerability",
+			      "isDefault" : false,
+			      "latestCommit" : "e4e449d7c2d6864b8452799459a883a483e915dc",
+			      "latestChangeset" : "e4e449d7c2d6864b8452799459a883a483e915dc",
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "active" : true,
+			         "id" : "master",
+			         "displayId" : "master"
+			      },
+			      "groups" : [],
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "users" : [],
+			      "id" : 399,
+			      "type" : "pull-request-only",
+			      "accessKeys" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-nodejs16-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : true,
+			      "displayId" : "master",
+			      "id" : "refs/heads/master",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "ff9192f2c6c219293dc430a366c42a4f93f2815d",
+			      "latestCommit" : "ff9192f2c6c219293dc430a366c42a4f93f2815d"
+			   },
+			   {
+			      "isDefault" : false,
+			      "latestChangeset" : "bd486b60bbe6996aef79e06d0668c5e17e152895",
+			      "type" : "BRANCH",
+			      "latestCommit" : "bd486b60bbe6996aef79e06d0668c5e17e152895",
+			      "id" : "refs/heads/TR-3127-nodejs16",
+			      "displayId" : "TR-3127-nodejs16"
+			   },
+			   {
+			      "id" : "refs/heads/TR-3127",
+			      "displayId" : "TR-3127",
+			      "latestCommit" : "0276d0ddf7858e3354893b52482f45bdbd4978ad",
+			      "latestChangeset" : "0276d0ddf7858e3354893b52482f45bdbd4978ad",
+			      "type" : "BRANCH",
+			      "isDefault" : false
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "latestChangeset" : "073d1f3fef35b80316f783e855091ee2b33bc748",
+			      "latestCommit" : "073d1f3fef35b80316f783e855091ee2b33bc748",
+			      "displayId" : "bjocar",
+			      "id" : "refs/heads/bjocar",
+			      "isDefault" : false
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "users" : [],
+			      "accessKeys" : [],
+			      "id" : 399,
+			      "matcher" : {
+			         "id" : "master",
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "active" : true,
+			         "displayId" : "master"
+			      },
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "type" : "pull-request-only",
+			      "groups" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-nodejs18-v2 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "displayId" : "master",
+			      "isDefault" : true,
+			      "type" : "BRANCH",
+			      "latestChangeset" : "26d4ff1c1162534aec952e2a0a8f69462ee70656",
+			      "latestCommit" : "26d4ff1c1162534aec952e2a0a8f69462ee70656",
+			      "id" : "refs/heads/master"
+			   },
+			   {
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "displayId" : "auto-update-22.04.32",
+			      "id" : "refs/heads/auto-update-22.04.32",
+			      "latestChangeset" : "afcc2ced090bfd93f6d2d7bbd24fe1d106c6e95d",
+			      "latestCommit" : "afcc2ced090bfd93f6d2d7bbd24fe1d106c6e95d"
+			   },
+			   {
+			      "id" : "refs/heads/first_build",
+			      "latestCommit" : "f3d2669c4709d6d77b59677144f481ed8b36a43a",
+			      "latestChangeset" : "f3d2669c4709d6d77b59677144f481ed8b36a43a",
+			      "type" : "BRANCH",
+			      "isDefault" : false,
+			      "displayId" : "first_build"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "matcher" : {
+			         "id" : "master",
+			         "active" : true,
+			         "displayId" : "master",
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         }
+			      },
+			      "users" : [],
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "groups" : [],
+			      "id" : 399,
+			      "accessKeys" : [],
+			      "type" : "pull-request-only"
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-nodejs6 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : true,
+			      "latestCommit" : "27a10a294f6a527b955d1ff778332672c087f0c3",
+			      "id" : "refs/heads/master",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "27a10a294f6a527b955d1ff778332672c087f0c3",
+			      "displayId" : "master"
+			   },
+			   {
+			      "latestCommit" : "d2241ec050c5dac83bc517a2b419fd416b2a92f4",
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/fix_version",
+			      "displayId" : "fix_version",
+			      "latestChangeset" : "d2241ec050c5dac83bc517a2b419fd416b2a92f4"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "groups" : [],
+			      "matcher" : {
+			         "active" : true,
+			         "id" : "master",
+			         "displayId" : "master",
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         }
+			      },
+			      "type" : "pull-request-only",
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "accessKeys" : [],
+			      "users" : [],
+			      "id" : 399
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-nodejs8 {
+		:::BRANCHES::: {
+			[
+			   {
+			      "latestCommit" : "c2e4936b9d3a5ea86633a6b882325b9ac1d8657d",
+			      "isDefault" : true,
+			      "latestChangeset" : "c2e4936b9d3a5ea86633a6b882325b9ac1d8657d",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/master",
+			      "displayId" : "master"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "type" : "pull-request-only",
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Branch",
+			            "id" : "BRANCH"
+			         },
+			         "displayId" : "master",
+			         "id" : "master",
+			         "active" : true
+			      },
+			      "scope" : {
+			         "type" : "PROJECT",
+			         "resourceId" : 657
+			      },
+			      "id" : 399,
+			      "accessKeys" : [],
+			      "groups" : [],
+			      "users" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: server-splunk-jre {
+		:::BRANCHES::: {
+			[
+			   {
+			      "type" : "BRANCH",
+			      "displayId" : "master",
+			      "latestChangeset" : "73f8cb25809abe28b63c338b7d85408a45ab8feb",
+			      "id" : "refs/heads/master",
+			      "isDefault" : true,
+			      "latestCommit" : "73f8cb25809abe28b63c338b7d85408a45ab8feb"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "groups" : [],
+			      "users" : [],
+			      "id" : 399,
+			      "scope" : {
+			         "resourceId" : 657,
+			         "type" : "PROJECT"
+			      },
+			      "accessKeys" : [],
+			      "type" : "pull-request-only",
+			      "matcher" : {
+			         "id" : "master",
+			         "active" : true,
+			         "displayId" : "master",
+			         "type" : {
+			            "id" : "BRANCH",
+			            "name" : "Branch"
+			         }
+			      }
+			   }
+			]
+
+		}
+	}
+}

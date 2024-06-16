@@ -1,0 +1,992 @@
+:Project: ANS {
+	:: PROJECT PERMISSIONS (groups) :: {[
+	   {
+	      "group" : {
+	         "name" : "devops"
+	      },
+	      "permission" : "PROJECT_ADMIN"
+	   }
+	]}
+
+	:: PROJECT PERMISSIONS (users) :: {[
+	   {
+	      "permission" : "PROJECT_READ",
+	      "user" : {
+	         "type" : "NORMAL",
+	         "links" : {
+	            "self" : [
+	               {
+	                  "href" : "https://buildtools.bisnode.com/stash/users/bamboo"
+	               }
+	            ]
+	         },
+	         "emailAddress" : "bamboo@bisnode.com",
+	         "slug" : "bamboo",
+	         "displayName" : "bamboo",
+	         "name" : "bamboo",
+	         "id" : 3133,
+	         "active" : true
+	      }
+	   },
+	   {
+	      "permission" : "PROJECT_ADMIN",
+	      "user" : {
+	         "links" : {
+	            "self" : [
+	               {
+	                  "href" : "https://buildtools.bisnode.com/stash/users/chisaw"
+	               }
+	            ]
+	         },
+	         "emailAddress" : "sawantc@dnb.com",
+	         "type" : "NORMAL",
+	         "name" : "chisaw",
+	         "id" : 9733,
+	         "active" : true,
+	         "slug" : "chisaw",
+	         "displayName" : "Chitralekha Sawant"
+	      }
+	   },
+	   {
+	      "permission" : "PROJECT_READ",
+	      "user" : {
+	         "slug" : "svc-automic",
+	         "displayName" : "svc-automic",
+	         "name" : "svc-automic",
+	         "id" : 11812,
+	         "active" : true,
+	         "emailAddress" : "svc-automic@bisnode.com",
+	         "links" : {
+	            "self" : [
+	               {
+	                  "href" : "https://buildtools.bisnode.com/stash/users/svc-automic"
+	               }
+	            ]
+	         },
+	         "type" : "NORMAL"
+	      }
+	   },
+	   {
+	      "permission" : "PROJECT_READ",
+	      "user" : {
+	         "id" : 11908,
+	         "name" : "testperm",
+	         "active" : true,
+	         "slug" : "testperm",
+	         "displayName" : "Testing Permissions",
+	         "emailAddress" : "nenad.antic@bisnode.com",
+	         "links" : {
+	            "self" : [
+	               {
+	                  "href" : "https://buildtools.bisnode.com/stash/users/testperm"
+	               }
+	            ]
+	         },
+	         "type" : "NORMAL"
+	      }
+	   }
+	]}
+
+	::Repo:: ansible-elasticsearch {
+		::: REPO PERMISSIONS (users) ::: {[
+		   {
+		      "user" : {
+		         "name" : "lukkad",
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/lukkad"
+		               }
+		            ]
+		         },
+		         "type" : "NORMAL",
+		         "id" : 5958,
+		         "slug" : "lukkad",
+		         "displayName" : "Łukasz Kądalski",
+		         "emailAddress" : "KadalskiL@DNB.com",
+		         "active" : true
+		      },
+		      "permission" : "REPO_READ"
+		   },
+		   {
+		      "user" : {
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/svc_eam-backstage-bi"
+		               }
+		            ]
+		         },
+		         "type" : "NORMAL",
+		         "name" : "svc_eam-backstage-bi",
+		         "slug" : "svc_eam-backstage-bi",
+		         "displayName" : "svc_eam-backstage-bitbucket-bamboo",
+		         "active" : true,
+		         "emailAddress" : "svc_eam-backstage-bitbucket-bamboo@bisnode.com",
+		         "id" : 10731
+		      },
+		      "permission" : "REPO_ADMIN"
+		   }
+		]}
+
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : true,
+			      "displayId" : "master",
+			      "id" : "refs/heads/master",
+			      "latestChangeset" : "1a2bcb5f6612b328237c6e5dedf94b9122d064cd",
+			      "latestCommit" : "1a2bcb5f6612b328237c6e5dedf94b9122d064cd",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "displayId" : "main",
+			      "isDefault" : false,
+			      "latestChangeset" : "1a2bcb5f6612b328237c6e5dedf94b9122d064cd",
+			      "id" : "refs/heads/main",
+			      "latestCommit" : "1a2bcb5f6612b328237c6e5dedf94b9122d064cd",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "id" : "refs/heads/6.6.0-TR-3128",
+			      "latestChangeset" : "1218f32222e83152ec48b812deb4bbb60288d218",
+			      "isDefault" : false,
+			      "displayId" : "6.6.0-TR-3128",
+			      "type" : "BRANCH",
+			      "latestCommit" : "1218f32222e83152ec48b812deb4bbb60288d218"
+			   },
+			   {
+			      "isDefault" : false,
+			      "displayId" : "6.6.0-TR-1695",
+			      "latestChangeset" : "8dd4645ddb3d757cf6663c91682a8b0ba5cabc9b",
+			      "id" : "refs/heads/6.6.0-TR-1695",
+			      "latestCommit" : "8dd4645ddb3d757cf6663c91682a8b0ba5cabc9b",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "latestCommit" : "f9b9af17a351037bc5965426b9d052a4bdcf262b",
+			      "type" : "BRANCH",
+			      "displayId" : "6.4.0-TR-1291",
+			      "isDefault" : false,
+			      "id" : "refs/heads/6.4.0-TR-1291",
+			      "latestChangeset" : "f9b9af17a351037bc5965426b9d052a4bdcf262b"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "id" : 5161,
+			      "type" : "read-only",
+			      "groups" : [],
+			      "users" : [],
+			      "scope" : {
+			         "resourceId" : 3746,
+			         "type" : "REPOSITORY"
+			      },
+			      "matcher" : {
+			         "type" : {
+			            "id" : "PATTERN",
+			            "name" : "Pattern"
+			         },
+			         "id" : "*",
+			         "active" : true,
+			         "displayId" : "*"
+			      },
+			      "accessKeys" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: ansible-grafana {
+		::: REPO PERMISSIONS (groups) ::: {[
+		   {
+		      "group" : {
+		         "name" : "developers"
+		      },
+		      "permission" : "REPO_WRITE"
+		   },
+		   {
+		      "permission" : "REPO_ADMIN",
+		      "group" : {
+		         "name" : "devops"
+		      }
+		   }
+		]}
+
+		::: REPO PERMISSIONS (users) ::: {[
+		   {
+		      "permission" : "REPO_READ",
+		      "user" : {
+		         "name" : "bamboo",
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/bamboo"
+		               }
+		            ]
+		         },
+		         "active" : true,
+		         "emailAddress" : "bamboo@bisnode.com",
+		         "slug" : "bamboo",
+		         "id" : 3133,
+		         "type" : "NORMAL",
+		         "displayName" : "bamboo"
+		      }
+		   },
+		   {
+		      "permission" : "REPO_ADMIN",
+		      "user" : {
+		         "name" : "svc_eam-backstage-bi",
+		         "active" : true,
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/svc_eam-backstage-bi"
+		               }
+		            ]
+		         },
+		         "emailAddress" : "svc_eam-backstage-bitbucket-bamboo@bisnode.com",
+		         "slug" : "svc_eam-backstage-bi",
+		         "displayName" : "svc_eam-backstage-bitbucket-bamboo",
+		         "id" : 10731,
+		         "type" : "NORMAL"
+		      }
+		   }
+		]}
+
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : true,
+			      "latestChangeset" : "926f7a922db0a87a68e2b2a44014ab22dc2fc4a8",
+			      "id" : "refs/heads/master",
+			      "latestCommit" : "926f7a922db0a87a68e2b2a44014ab22dc2fc4a8",
+			      "displayId" : "master",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "id" : "refs/heads/main",
+			      "isDefault" : false,
+			      "latestChangeset" : "926f7a922db0a87a68e2b2a44014ab22dc2fc4a8",
+			      "latestCommit" : "926f7a922db0a87a68e2b2a44014ab22dc2fc4a8",
+			      "type" : "BRANCH",
+			      "displayId" : "main"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "displayId" : "fork-from-0.10.1",
+			      "id" : "refs/heads/fork-from-0.10.1",
+			      "isDefault" : false,
+			      "latestChangeset" : "0dd8034579fd5c329492c8dbfc99ef9bed7f7f2c",
+			      "latestCommit" : "0dd8034579fd5c329492c8dbfc99ef9bed7f7f2c"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "type" : "read-only",
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Pattern",
+			            "id" : "PATTERN"
+			         },
+			         "displayId" : "*",
+			         "id" : "*",
+			         "active" : true
+			      },
+			      "users" : [],
+			      "groups" : [],
+			      "accessKeys" : [],
+			      "scope" : {
+			         "type" : "REPOSITORY",
+			         "resourceId" : 2867
+			      },
+			      "id" : 5166
+			   }
+			]
+
+		}
+	}
+	::Repo:: ansible-role-authconfig-ad {
+		::: REPO PERMISSIONS (groups) ::: {[
+		   {
+		      "group" : {
+		         "name" : "developers"
+		      },
+		      "permission" : "REPO_READ"
+		   },
+		   {
+		      "permission" : "REPO_WRITE",
+		      "group" : {
+		         "name" : "devops"
+		      }
+		   }
+		]}
+
+		::: REPO PERMISSIONS (users) ::: {[
+		   {
+		      "permission" : "REPO_READ",
+		      "user" : {
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/bamboo"
+		               }
+		            ]
+		         },
+		         "active" : true,
+		         "displayName" : "bamboo",
+		         "id" : 3133,
+		         "name" : "bamboo",
+		         "type" : "NORMAL",
+		         "slug" : "bamboo",
+		         "emailAddress" : "bamboo@bisnode.com"
+		      }
+		   },
+		   {
+		      "permission" : "REPO_ADMIN",
+		      "user" : {
+		         "slug" : "svc_eam-backstage-bi",
+		         "name" : "svc_eam-backstage-bi",
+		         "id" : 10731,
+		         "type" : "NORMAL",
+		         "displayName" : "svc_eam-backstage-bitbucket-bamboo",
+		         "emailAddress" : "svc_eam-backstage-bitbucket-bamboo@bisnode.com",
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/svc_eam-backstage-bi"
+		               }
+		            ]
+		         },
+		         "active" : true
+		      }
+		   }
+		]}
+
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : true,
+			      "type" : "BRANCH",
+			      "latestChangeset" : "dc0ca85bbb95bdca0911358248761f812357e622",
+			      "displayId" : "master",
+			      "id" : "refs/heads/master",
+			      "latestCommit" : "dc0ca85bbb95bdca0911358248761f812357e622"
+			   },
+			   {
+			      "latestCommit" : "dc0ca85bbb95bdca0911358248761f812357e622",
+			      "id" : "refs/heads/main",
+			      "latestChangeset" : "dc0ca85bbb95bdca0911358248761f812357e622",
+			      "displayId" : "main",
+			      "type" : "BRANCH",
+			      "isDefault" : false
+			   },
+			   {
+			      "latestCommit" : "12a07bbf6d7991dce71ee3d155212dc94fc40b9c",
+			      "id" : "refs/heads/TR-62_ad_join_green",
+			      "isDefault" : false,
+			      "latestChangeset" : "12a07bbf6d7991dce71ee3d155212dc94fc40b9c",
+			      "displayId" : "TR-62_ad_join_green",
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "users" : [],
+			      "scope" : {
+			         "resourceId" : 2011,
+			         "type" : "REPOSITORY"
+			      },
+			      "groups" : [],
+			      "matcher" : {
+			         "displayId" : "*",
+			         "id" : "*",
+			         "type" : {
+			            "name" : "Pattern",
+			            "id" : "PATTERN"
+			         },
+			         "active" : true
+			      },
+			      "accessKeys" : [],
+			      "type" : "read-only",
+			      "id" : 5163
+			   }
+			]
+
+		}
+	}
+	::Repo:: ansible_sas_viya {
+		::: REPO PERMISSIONS (users) ::: {[
+		   {
+		      "user" : {
+		         "id" : 9733,
+		         "emailAddress" : "sawantc@dnb.com",
+		         "slug" : "chisaw",
+		         "active" : true,
+		         "displayName" : "Chitralekha Sawant",
+		         "type" : "NORMAL",
+		         "name" : "chisaw",
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/chisaw"
+		               }
+		            ]
+		         }
+		      },
+		      "permission" : "REPO_ADMIN"
+		   },
+		   {
+		      "user" : {
+		         "type" : "NORMAL",
+		         "displayName" : "Håkon Fløystad",
+		         "active" : true,
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/hakflo"
+		               }
+		            ]
+		         },
+		         "name" : "hakflo",
+		         "emailAddress" : "FloystadH@DNB.com",
+		         "id" : 4781,
+		         "slug" : "hakflo"
+		      },
+		      "permission" : "REPO_WRITE"
+		   },
+		   {
+		      "user" : {
+		         "displayName" : "Kanishk Kherwal",
+		         "active" : true,
+		         "type" : "NORMAL",
+		         "name" : "kankhe",
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/kankhe"
+		               }
+		            ]
+		         },
+		         "id" : 10720,
+		         "emailAddress" : "KherwalK@DNB.com",
+		         "slug" : "kankhe"
+		      },
+		      "permission" : "REPO_WRITE"
+		   },
+		   {
+		      "permission" : "REPO_WRITE",
+		      "user" : {
+		         "id" : 11002,
+		         "emailAddress" : "MadejS@DNB.com",
+		         "slug" : "madejs",
+		         "active" : true,
+		         "displayName" : "Slawomir Madej",
+		         "type" : "NORMAL",
+		         "name" : "madejs",
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/madejs"
+		               }
+		            ]
+		         }
+		      }
+		   },
+		   {
+		      "permission" : "REPO_ADMIN",
+		      "user" : {
+		         "active" : true,
+		         "displayName" : "Peter Grund",
+		         "type" : "NORMAL",
+		         "name" : "petgru",
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/petgru"
+		               }
+		            ]
+		         },
+		         "id" : 2591,
+		         "emailAddress" : "GrundP@DNB.com",
+		         "slug" : "petgru"
+		      }
+		   },
+		   {
+		      "permission" : "REPO_ADMIN",
+		      "user" : {
+		         "slug" : "svc_eam-backstage-bi",
+		         "id" : 10731,
+		         "emailAddress" : "svc_eam-backstage-bitbucket-bamboo@bisnode.com",
+		         "name" : "svc_eam-backstage-bi",
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/svc_eam-backstage-bi"
+		               }
+		            ]
+		         },
+		         "displayName" : "svc_eam-backstage-bitbucket-bamboo",
+		         "active" : true,
+		         "type" : "NORMAL"
+		      }
+		   }
+		]}
+
+		:::BRANCHES::: {
+			[
+			   {
+			      "displayId" : "master",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "e07e6f00c7b2b9736f3fc9a7033f8c845233e39c",
+			      "id" : "refs/heads/master",
+			      "latestCommit" : "e07e6f00c7b2b9736f3fc9a7033f8c845233e39c",
+			      "isDefault" : true
+			   },
+			   {
+			      "latestChangeset" : "20337b3f51657f2cf9340e4b325610107d4e0093",
+			      "id" : "refs/heads/main",
+			      "displayId" : "main",
+			      "type" : "BRANCH",
+			      "latestCommit" : "20337b3f51657f2cf9340e4b325610107d4e0093",
+			      "isDefault" : false
+			   },
+			   {
+			      "id" : "refs/heads/TECHOPS-49102",
+			      "latestChangeset" : "67ccfba60708bcc9075a36897b5054297e0ffe5b",
+			      "type" : "BRANCH",
+			      "displayId" : "TECHOPS-49102",
+			      "isDefault" : false,
+			      "latestCommit" : "67ccfba60708bcc9075a36897b5054297e0ffe5b"
+			   },
+			   {
+			      "displayId" : "automated_config",
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/automated_config",
+			      "latestChangeset" : "61b26ecf5a6bf6fca41f81335a86ba21e72142b9",
+			      "isDefault" : false,
+			      "latestCommit" : "61b26ecf5a6bf6fca41f81335a86ba21e72142b9"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "displayId" : "update-2021_07_13",
+			      "id" : "refs/heads/update-2021_07_13",
+			      "latestChangeset" : "3d467ddda7be1c7fd3e886c833c33099ac669794",
+			      "isDefault" : false,
+			      "latestCommit" : "3d467ddda7be1c7fd3e886c833c33099ac669794"
+			   },
+			   {
+			      "type" : "BRANCH",
+			      "displayId" : "scoring_3_5_upgrade",
+			      "id" : "refs/heads/scoring_3_5_upgrade",
+			      "latestChangeset" : "370911de5d87ba7f55cf40d054bae3ec6467e7fa",
+			      "isDefault" : false,
+			      "latestCommit" : "370911de5d87ba7f55cf40d054bae3ec6467e7fa"
+			   }
+			]
+
+		}
+	}
+	::Repo:: ansible_sas_viya_model {
+		::: REPO PERMISSIONS (users) ::: {[
+		   {
+		      "permission" : "REPO_WRITE",
+		      "user" : {
+		         "displayName" : "Håkon Fløystad",
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/hakflo"
+		               }
+		            ]
+		         },
+		         "id" : 4781,
+		         "type" : "NORMAL",
+		         "name" : "hakflo",
+		         "slug" : "hakflo",
+		         "active" : true,
+		         "emailAddress" : "FloystadH@DNB.com"
+		      }
+		   },
+		   {
+		      "permission" : "REPO_ADMIN",
+		      "user" : {
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/madejs"
+		               }
+		            ]
+		         },
+		         "id" : 11002,
+		         "displayName" : "Slawomir Madej",
+		         "slug" : "madejs",
+		         "active" : true,
+		         "emailAddress" : "MadejS@DNB.com",
+		         "type" : "NORMAL",
+		         "name" : "madejs"
+		      }
+		   },
+		   {
+		      "permission" : "REPO_ADMIN",
+		      "user" : {
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/svc_eam-backstage-bi"
+		               }
+		            ]
+		         },
+		         "id" : 10731,
+		         "displayName" : "svc_eam-backstage-bitbucket-bamboo",
+		         "emailAddress" : "svc_eam-backstage-bitbucket-bamboo@bisnode.com",
+		         "slug" : "svc_eam-backstage-bi",
+		         "active" : true,
+		         "type" : "NORMAL",
+		         "name" : "svc_eam-backstage-bi"
+		      }
+		   }
+		]}
+
+		:::BRANCHES::: {
+			[
+			   {
+			      "displayId" : "master",
+			      "latestCommit" : "4e081a02e244d1f14616f8ef001547f74be2e94a",
+			      "latestChangeset" : "4e081a02e244d1f14616f8ef001547f74be2e94a",
+			      "id" : "refs/heads/master",
+			      "type" : "BRANCH",
+			      "isDefault" : true
+			   },
+			   {
+			      "displayId" : "main",
+			      "latestCommit" : "4e081a02e244d1f14616f8ef001547f74be2e94a",
+			      "latestChangeset" : "4e081a02e244d1f14616f8ef001547f74be2e94a",
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "id" : "refs/heads/main"
+			   },
+			   {
+			      "latestCommit" : "fa6fb0de6c945ef910a750c5afe591de9d1c2915",
+			      "latestChangeset" : "fa6fb0de6c945ef910a750c5afe591de9d1c2915",
+			      "displayId" : "Updates-October-2022",
+			      "id" : "refs/heads/Updates-October-2022",
+			      "type" : "BRANCH",
+			      "isDefault" : false
+			   },
+			   {
+			      "latestChangeset" : "aec41eca658554a69531c94364655eb4ec59b6d5",
+			      "latestCommit" : "aec41eca658554a69531c94364655eb4ec59b6d5",
+			      "displayId" : "Updates-Sepember-2021",
+			      "id" : "refs/heads/Updates-Sepember-2021",
+			      "isDefault" : false,
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "id" : "refs/heads/viya_3_5",
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "latestChangeset" : "1de0715a1ef116d6c3244d6ac7174074a3188be9",
+			      "latestCommit" : "1de0715a1ef116d6c3244d6ac7174074a3188be9",
+			      "displayId" : "viya_3_5"
+			   },
+			   {
+			      "latestChangeset" : "7d2bfe9fd9ed382da6ca1a43628cbd247c3844cb",
+			      "latestCommit" : "7d2bfe9fd9ed382da6ca1a43628cbd247c3844cb",
+			      "displayId" : "viya_3_5_hotfix",
+			      "id" : "refs/heads/viya_3_5_hotfix",
+			      "isDefault" : false,
+			      "type" : "BRANCH"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "matcher" : {
+			         "id" : "*",
+			         "active" : true,
+			         "type" : {
+			            "id" : "PATTERN",
+			            "name" : "Pattern"
+			         },
+			         "displayId" : "*"
+			      },
+			      "accessKeys" : [],
+			      "type" : "read-only",
+			      "scope" : {
+			         "type" : "REPOSITORY",
+			         "resourceId" : 3447
+			      },
+			      "groups" : [],
+			      "id" : 5168,
+			      "users" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: sas_bisnode {
+		::: REPO PERMISSIONS (users) ::: {[
+		   {
+		      "permission" : "REPO_ADMIN",
+		      "user" : {
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/svc_eam-backstage-bi"
+		               }
+		            ]
+		         },
+		         "id" : 10731,
+		         "slug" : "svc_eam-backstage-bi",
+		         "displayName" : "svc_eam-backstage-bitbucket-bamboo",
+		         "emailAddress" : "svc_eam-backstage-bitbucket-bamboo@bisnode.com",
+		         "type" : "NORMAL",
+		         "active" : true,
+		         "name" : "svc_eam-backstage-bi"
+		      }
+		   }
+		]}
+
+		:::BRANCHES::: {
+			[
+			   {
+			      "isDefault" : true,
+			      "type" : "BRANCH",
+			      "latestChangeset" : "35ca34580cb2c13f283ed8a1023781bb23e0ef40",
+			      "latestCommit" : "35ca34580cb2c13f283ed8a1023781bb23e0ef40",
+			      "displayId" : "master",
+			      "id" : "refs/heads/master"
+			   },
+			   {
+			      "displayId" : "main",
+			      "latestCommit" : "35ca34580cb2c13f283ed8a1023781bb23e0ef40",
+			      "id" : "refs/heads/main",
+			      "isDefault" : false,
+			      "type" : "BRANCH",
+			      "latestChangeset" : "35ca34580cb2c13f283ed8a1023781bb23e0ef40"
+			   },
+			   {
+			      "isDefault" : false,
+			      "latestChangeset" : "25a6087b2f4dc28706b4d27d09424e4777596aee",
+			      "type" : "BRANCH",
+			      "latestCommit" : "25a6087b2f4dc28706b4d27d09424e4777596aee",
+			      "displayId" : "TR-30_hdfs_backup",
+			      "id" : "refs/heads/TR-30_hdfs_backup"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "id" : 5164,
+			      "accessKeys" : [],
+			      "scope" : {
+			         "type" : "REPOSITORY",
+			         "resourceId" : 2088
+			      },
+			      "type" : "read-only",
+			      "groups" : [],
+			      "matcher" : {
+			         "type" : {
+			            "name" : "Pattern",
+			            "id" : "PATTERN"
+			         },
+			         "active" : true,
+			         "displayId" : "*",
+			         "id" : "*"
+			      },
+			      "users" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: sas_esp {
+		::: REPO PERMISSIONS (users) ::: {[
+		   {
+		      "permission" : "REPO_READ",
+		      "user" : {
+		         "type" : "NORMAL",
+		         "active" : true,
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/bamboo"
+		               }
+		            ]
+		         },
+		         "name" : "bamboo",
+		         "displayName" : "bamboo",
+		         "slug" : "bamboo",
+		         "emailAddress" : "bamboo@bisnode.com",
+		         "id" : 3133
+		      }
+		   },
+		   {
+		      "permission" : "REPO_ADMIN",
+		      "user" : {
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/svc_eam-backstage-bi"
+		               }
+		            ]
+		         },
+		         "active" : true,
+		         "type" : "NORMAL",
+		         "id" : 10731,
+		         "slug" : "svc_eam-backstage-bi",
+		         "emailAddress" : "svc_eam-backstage-bitbucket-bamboo@bisnode.com",
+		         "displayName" : "svc_eam-backstage-bitbucket-bamboo",
+		         "name" : "svc_eam-backstage-bi"
+		      }
+		   }
+		]}
+
+		:::BRANCHES::: {
+			[
+			   {
+			      "latestCommit" : "051ee4c458f78a1d4f39a578520d4f4f9bfe7e13",
+			      "id" : "refs/heads/master",
+			      "displayId" : "master",
+			      "type" : "BRANCH",
+			      "isDefault" : true,
+			      "latestChangeset" : "051ee4c458f78a1d4f39a578520d4f4f9bfe7e13"
+			   },
+			   {
+			      "latestChangeset" : "051ee4c458f78a1d4f39a578520d4f4f9bfe7e13",
+			      "isDefault" : false,
+			      "id" : "refs/heads/main",
+			      "displayId" : "main",
+			      "type" : "BRANCH",
+			      "latestCommit" : "051ee4c458f78a1d4f39a578520d4f4f9bfe7e13"
+			   },
+			   {
+			      "isDefault" : false,
+			      "latestChangeset" : "cfeef51080a73a430b15cfb1a528d95aa43ce314",
+			      "latestCommit" : "cfeef51080a73a430b15cfb1a528d95aa43ce314",
+			      "type" : "BRANCH",
+			      "displayId" : "esp_devel",
+			      "id" : "refs/heads/esp_devel"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "matcher" : {
+			         "type" : {
+			            "id" : "PATTERN",
+			            "name" : "Pattern"
+			         },
+			         "active" : true,
+			         "displayId" : "*",
+			         "id" : "*"
+			      },
+			      "groups" : [],
+			      "id" : 5165,
+			      "scope" : {
+			         "type" : "REPOSITORY",
+			         "resourceId" : 2179
+			      },
+			      "users" : [],
+			      "type" : "read-only",
+			      "accessKeys" : []
+			   }
+			]
+
+		}
+	}
+	::Repo:: sas_viya_playbook {
+		::: REPO PERMISSIONS (users) ::: {[
+		   {
+		      "permission" : "REPO_ADMIN",
+		      "user" : {
+		         "displayName" : "svc_eam-backstage-bitbucket-bamboo",
+		         "id" : 10731,
+		         "links" : {
+		            "self" : [
+		               {
+		                  "href" : "https://buildtools.bisnode.com/stash/users/svc_eam-backstage-bi"
+		               }
+		            ]
+		         },
+		         "name" : "svc_eam-backstage-bi",
+		         "type" : "NORMAL",
+		         "active" : true,
+		         "slug" : "svc_eam-backstage-bi",
+		         "emailAddress" : "svc_eam-backstage-bitbucket-bamboo@bisnode.com"
+		      }
+		   }
+		]}
+
+		:::BRANCHES::: {
+			[
+			   {
+			      "id" : "refs/heads/master",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "0c9674ef0d6ba9445ee7e134e0acc2e17d1c8c80",
+			      "isDefault" : true,
+			      "latestCommit" : "0c9674ef0d6ba9445ee7e134e0acc2e17d1c8c80",
+			      "displayId" : "master"
+			   },
+			   {
+			      "isDefault" : false,
+			      "latestChangeset" : "0c9674ef0d6ba9445ee7e134e0acc2e17d1c8c80",
+			      "displayId" : "main",
+			      "latestCommit" : "0c9674ef0d6ba9445ee7e134e0acc2e17d1c8c80",
+			      "id" : "refs/heads/main",
+			      "type" : "BRANCH"
+			   },
+			   {
+			      "id" : "refs/heads/sas_update",
+			      "type" : "BRANCH",
+			      "latestChangeset" : "1b62772ddbe9e4cd6c8b9420f289edb8bb32b46b",
+			      "isDefault" : false,
+			      "latestCommit" : "1b62772ddbe9e4cd6c8b9420f289edb8bb32b46b",
+			      "displayId" : "sas_update"
+			   }
+			]
+
+		}
+		:::REPO BRANCH PERMISSIONS::: {
+			[
+			   {
+			      "scope" : {
+			         "resourceId" : 2056,
+			         "type" : "REPOSITORY"
+			      },
+			      "type" : "read-only",
+			      "accessKeys" : [],
+			      "matcher" : {
+			         "displayId" : "*",
+			         "type" : {
+			            "name" : "Pattern",
+			            "id" : "PATTERN"
+			         },
+			         "active" : true,
+			         "id" : "*"
+			      },
+			      "groups" : [],
+			      "id" : 5167,
+			      "users" : []
+			   }
+			]
+
+		}
+	}
+}

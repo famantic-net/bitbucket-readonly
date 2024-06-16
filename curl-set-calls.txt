@@ -1,0 +1,235 @@
+curl \
+    --silent \
+    --insecure \
+  --request GET \
+  --url 'https://buildtools.bisnode.net/stash/rest/branch-permissions/latest/projects/QA/restrictions' \
+  --header "Authorization: Bearer $_BITBUCKETTOKEN_"  \
+  --header 'Accept: application/json'
+
+
+# Global permissions
+# ==================
+
+curl --request PUT \
+  --url 'http://{baseurl}/rest/api/latest/admin/permissions/groups?name={name}&permission={permission}'
+
+
+curl --request DELETE \
+  --url 'http://{baseurl}/rest/api/latest/admin/permissions/groups?name={name}'
+
+
+curl --request PUT \
+  --url 'http://{baseurl}/rest/api/latest/admin/permissions/users?name={name}&permission={permission}'
+
+
+curl --request DELETE \
+  --url 'http://{baseurl}/rest/api/latest/admin/permissions/users?name={name}'
+
+
+# Project permissions
+# ===================
+
+curl --request DELETE \
+  --url 'http://{baseurl}/rest/api/latest/projects/{projectKey}/permissions'
+
+curl --request PUT \
+  --url 'http://{baseurl}/rest/api/latest/projects/{projectKey}/permissions/groups'
+
+curl --request DELETE \
+  --url 'http://{baseurl}/rest/api/latest/projects/{projectKey}/permissions/groups'
+
+curl --request PUT \
+  --url 'http://{baseurl}/rest/api/latest/projects/{projectKey}/permissions/users'
+
+curl --request DELETE \
+  --url 'http://{baseurl}/rest/api/latest/projects/{projectKey}/permissions/users'
+
+# Grant or revoke a project permission to all users, i.e. set the default permission.
+curl --request POST \
+  --url 'http://{baseurl}/rest/api/latest/projects/{projectKey}/permissions/{permission}/all'
+
+
+# Repository permissions
+# ======================
+
+curl --request DELETE \
+  --url 'http://{baseurl}/rest/api/latest/projects/{projectKey}/repos/{repositorySlug}/permissions'
+
+
+curl --request PUT \
+  --url 'http://{baseurl}/rest/api/latest/projects/{projectKey}/repos/{repositorySlug}/permissions/groups?name={name}&permission={permission}'
+
+
+curl --request DELETE \
+  --url 'http://{baseurl}/rest/api/latest/projects/{projectKey}/repos/{repositorySlug}/permissions/groups?name={name}'
+
+
+curl --request PUT \
+  --url 'http://{baseurl}/rest/api/latest/projects/{projectKey}/repos/{repositorySlug}/permissions/users?name={name}&permission={permission}'
+
+
+curl --request DELETE \
+  --url 'http://{baseurl}/rest/api/latest/projects/{projectKey}/repos/{repositorySlug}/permissions/users?name={name}'
+
+
+# Branch
+# ======
+
+# Project
+curl --request DELETE \
+  --url 'http://{baseurl}/rest/branch-permissions/latest/projects/{projectKey}/restrictions/{id}'
+
+(From chatgpt)
+
+[example]
+curl -u username:password -X DELETE \
+  "https://buildtools.bisnode.com/stash/rest/branch-permissions/2.0/projects/QA/permissions/5155/users?name=nenant"
+
+curl -u username:password -X DELETE \
+  "https://buildtools.bisnode.com/stash/rest/branch-permissions/2.0/projects/QA/permissions/5153/groups?name=stash-users"
+
+[generic]
+curl -u username:password -X DELETE \
+  "https://buildtools.bisnode.com/stash/rest/branch-permissions/2.0/projects/{projectKey}/permissions/{permissionId}/users?name={userSlug}"
+
+curl -u username:password -X DELETE \
+  "https://buildtools.bisnode.com/stash/rest/branch-permissions/2.0/projects/{projectKey}/permissions/{permissionId}/groups?name={groupName}"
+
+# Repo
+curl --request DELETE \
+  --url 'http://{baseurl}//rest/branch-permissions/2.0/projects/{projectKey}/repos/{repositorySlug}/restrictions/{id}
+
+(From chatgpt)
+
+curl -u username:password -X DELETE \
+  "https://buildtools.bisnode.com/stash/rest/branch-permissions/2.0/projects/QA/repos/8284/permissions/5150/users?name=testperm"
+
+curl -u username:password -X DELETE \
+  "https://buildtools.bisnode.com/stash/rest/branch-permissions/2.0/projects/QA/repos/8284/permissions/5152/groups?name=sec-tbac-team-quantum-agnostics"
+
+[generic]
+curl -u username:password -X DELETE \
+  "https://buildtools.bisnode.com/stash/rest/branch-permissions/2.0/projects/{projectKey}/repos/{repoId}/permissions/{permissionId}/users?name={userSlug}"
+
+curl -u username:password -X DELETE \
+  "https://buildtools.bisnode.com/stash/rest/branch-permissions/2.0/projects/{projectKey}/repos/{repoId}/permissions/{permissionId}/groups?name={groupName}"
+
+
+
+---
+# Create multiple ref restrictions
+curl --request POST \
+  --url 'http://{baseurl}/rest/branch-permissions/latest/projects/{projectKey}/restrictions' \
+  --header 'Accept: application/json'
+
+# Example request representations
+{
+    "type": "read-only",
+    "matcher": {
+        "id": "refs/tags/**",
+        "displayId": "refs/tags/**",
+        "type": {
+            "id": "PATTERN",
+            "name": "Pattern"
+        },
+        "active": true
+    },
+    "users": [
+        "bman",
+        "tstark",
+        "hulk"
+    ],
+    "groups": [
+        "bitbucket-users"
+    ],
+    "accessKeys": [
+        1,
+        2,
+        3
+    ]
+}
+
+# Actual
+{
+  "users" : [],
+  "id" : 5122,
+  "scope" : {
+      "resourceId" : 445,
+      "type" : "PROJECT"
+  },
+  "accessKeys" : [],
+  "type" : "fast-forward-only",
+  "matcher" : {
+      "id" : "*",
+      "displayId" : "*",
+      "type" : {
+        "id" : "PATTERN",
+        "name" : "Pattern"
+      },
+      "active" : true
+  },
+  "groups" : []
+},
+
+{
+  "type" : "no-deletes",
+  "matcher" : {
+      "displayId" : "*",
+      "id" : "*",
+      "type" : {
+        "name" : "Pattern",
+        "id" : "PATTERN"
+      },
+      "active" : true
+  },
+  "groups" : [],
+  "id" : 5124,
+  "users" : [],
+  "scope" : {
+      "resourceId" : 445,
+      "type" : "PROJECT"
+  },
+  "accessKeys" : []
+},
+
+{
+  "users" : [],
+  "id" : 5123,
+  "scope" : {
+      "type" : "PROJECT",
+      "resourceId" : 445
+  },
+  "accessKeys" : [],
+  "type" : "pull-request-only",
+  "matcher" : {
+      "displayId" : "*",
+      "id" : "*",
+      "active" : true,
+      "type" : {
+        "id" : "PATTERN",
+        "name" : "Pattern"
+      }
+  },
+  "groups" : []
+},
+
+{
+  "type" : "read-only",
+  "matcher" : {
+      "id" : "*",
+      "displayId" : "*",
+      "active" : true,
+      "type" : {
+        "id" : "PATTERN",
+        "name" : "Pattern"
+      }
+  },
+  "groups" : [],
+  "users" : [],
+  "id" : 5121,
+  "scope" : {
+      "type" : "PROJECT",
+      "resourceId" : 445
+  },
+  "accessKeys" : []
+}

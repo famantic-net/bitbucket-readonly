@@ -1,0 +1,18 @@
+{
+  "users" : [],
+  "scope" : {
+      "type" : "PROJECT"
+  },
+  "accessKeys" : [],
+  "type" : "pull-request-only",
+  "matcher" : {
+      "displayId" : "*",
+      "id" : "*",
+      "active" : true,
+      "type" : {
+        "id" : "PATTERN",
+        "name" : "Pattern"
+      }
+  },
+  "groups" : []
+}

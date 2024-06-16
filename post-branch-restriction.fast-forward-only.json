@@ -1,0 +1,18 @@
+{
+  "users" : [],
+  "scope" : {
+      "type" : "PROJECT"
+  },
+  "accessKeys" : [],
+  "type" : "fast-forward-only",
+  "matcher" : {
+      "id" : "*",
+      "displayId" : "*",
+      "type" : {
+        "id" : "PATTERN",
+        "name" : "Pattern"
+      },
+      "active" : true
+  },
+  "groups" : []
+}

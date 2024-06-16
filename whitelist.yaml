@@ -1,0 +1,55 @@
+whitelist:
+  _ALL_:
+    kubernetes-env-config:
+      teams:
+        - _ALL_
+      users: []
+  VEN:
+    _ALL_:
+      teams:
+        - sec-tbac-team-drop-table
+      users: []
+  DBASE:
+    _ALL_:
+      teams:
+        - sec-tbac-team-platform
+      users: []
+  ANS:
+    ansible_sas_viya_model:
+      teams:
+        - sec-tbac-team-platform
+      users: []
+    ansible_sas_viya:
+      teams:
+        - sec-tbac-team-platform
+      users: []
+    sas_esp:
+      teams:
+        - sec-tbac-team-platform
+      users: []
+    sas_bisnode:
+      teams:
+        - sec-tbac-team-platform
+      users: []
+    ansible-elasticsearch:
+      teams:
+        - sec-tbac-team-platform
+      users: []
+    sas_viya_playbook:
+      teams:
+        - sec-tbac-team-platform
+      users: []
+    ansible-role-authconfig-ad:
+      teams:
+        - sec-tbac-team-platform
+      users: []
+  QA:
+    _ALL_:
+      teams:
+        - sec-tbac-team-quantum-agnostics
+      users: []
+    testing-permission-settings:
+      teams: []
+      users:
+        - nenant
+        - testperm

@@ -1,0 +1,18 @@
+{
+  "type" : "read-only",
+  "matcher" : {
+      "id" : "*",
+      "displayId" : "*",
+      "active" : true,
+      "type" : {
+        "id" : "PATTERN",
+        "name" : "Pattern"
+      }
+  },
+  "scope" : {
+      "type" : "PROJECT"
+  },
+  "groups" : [],
+  "users" : [],
+  "accessKeys" : []
+}

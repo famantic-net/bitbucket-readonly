@@ -1,0 +1,18 @@
+{
+  "type" : "no-deletes",
+  "matcher" : {
+      "displayId" : "*",
+      "id" : "*",
+      "type" : {
+        "name" : "Pattern",
+        "id" : "PATTERN"
+      },
+      "active" : true
+  },
+  "groups" : [],
+  "users" : [],
+  "scope" : {
+      "type" : "PROJECT"
+  },
+  "accessKeys" : []
+}
