@@ -1,4 +1,5 @@
 package WhiteList;
+# Written by ChatGPT/4o (after many iterations and some directed changes)
 
 use strict;
 use warnings;
