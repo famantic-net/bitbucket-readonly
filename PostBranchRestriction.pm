@@ -97,19 +97,25 @@ sub curlpost {
         );
         $curl =~ s/[\t ]+$//s; # Removing that last empty indentation for better trace readibility
         print "\t\t>>> Setting on: project '$project', repo '$repo' <<<\n" if not $printed;
-        #$printed = 1;
-        if (@{$users} or @{$teams}) {
-            print "\t\t>>> Adding excemptions for teams (@{$teams}) and users (@{$users}) <<<";
+        $printed = 1;
+        my $set_permissions = sub {
+            unless ($commit) {
+                $curl =~ s/^/\t/smg if $repo; # For better readibility in print
+                print "$curl" unless $quiet;
+            }
+            else {
+                print "\n>>> Sending: <<<\n$curl\n---\n";
+                my $received = qx($curl);
+                print "<<< Response: >>>\n---\n";
+                print JSON::PP->new->utf8->pretty->encode(decode_json($received));
+            }
+        };
+        if ($repo and (@{$users} or @{$teams})) {
+            print "\t\t>>> Adding exemptions for teams (@{$teams}) and users (@{$users}) <<<";
+            $set_permissions->();
         }
-        unless ($commit) {
-            $curl =~ s/^/\t/smg if $repo; # For better readibility in print
-            print "$curl" unless $quiet;
-        }
-        else {
-            print "\n>>> Sending: <<<\n$curl\n---\n";
-            my $received = qx($curl);
-            print "<<< Response: >>>\n---\n";
-            print JSON::PP->new->utf8->pretty->encode(decode_json($received));
+        elsif (not $repo) {
+            $set_permissions->();
         }
     }
 }

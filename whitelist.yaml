@@ -47,6 +47,7 @@ whitelist:
     _ALL_:
       teams:
         - sec-tbac-team-quantum-agnostics
+        - sec-tbac-team-loop-troopers
       users: []
     testing-permission-settings:
       teams: []
