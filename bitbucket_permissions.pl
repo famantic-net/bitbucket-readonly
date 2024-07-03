@@ -22,7 +22,7 @@ binmode(STDOUT, ":encoding(UTF-8)");
 my $permgroups;
 {
     local $/;
-    open my $fh, '<', "repo_permission_groups.test-QA.txt";
+    open my $fh, '<', "repo_permission_groups.txt";
     $permgroups = <$fh>;
     close $fh;
 }

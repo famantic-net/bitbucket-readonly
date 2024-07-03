@@ -43,6 +43,17 @@ whitelist:
       teams:
         - sec-tbac-team-platform
       users: []
+  DE:
+    salesforce-metadata:
+      teams: []
+      users:
+        - romanp
+  IMS:
+    twobo-curity-identity-server:
+      teams:
+        - sec-tbac-team-nasty-hamsters
+      users:
+        - bamboo
   QA:
     _ALL_:
       teams:

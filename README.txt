@@ -8,8 +8,8 @@ All repo permissions token for uid: foreman
 Actual uid login with full SYSADMIN permissions necessary to manage 'all-users' list for
 whitelist _ALL_' keyword.
 
- export _BITBUCKETPWD_=<pwd>
  export _BITBUCKETUSER_=foreman
+ export _BITBUCKETPWD_=<pwd>
 
   ==========
  Strategy
