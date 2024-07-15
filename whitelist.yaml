@@ -54,6 +54,12 @@ whitelist:
         - sec-tbac-team-nasty-hamsters
       users:
         - bamboo
+  GBQN:
+    gbq-flows-prod:
+      teams: []
+      users:
+        - tomjedy
+        - nifi-sm
   QA:
     _ALL_:
       teams:
