@@ -55,11 +55,14 @@ whitelist:
       users:
         - bamboo
   GBQN:
+    _ALL_:
+      teams: []
+      users:
+        - nifi-sm
     gbq-flows-prod:
       teams: []
       users:
         - tomjedy
-        - nifi-sm
   QA:
     _ALL_:
       teams:
