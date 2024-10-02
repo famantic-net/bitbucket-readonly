@@ -63,6 +63,12 @@ whitelist:
       teams: []
       users:
         - tomjedy
+  DMN:
+    _ALL_:
+      teams: []
+      users:
+        - tomjedy
+        - wesolowskir
   QA:
     _ALL_:
       teams:
